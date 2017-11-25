@@ -7,6 +7,22 @@
  		<title>Hannah Tajo and Patrick's Wedding</title>
 	</head>
 	<body>
+		<div id='modal'>
+			<div id='picture-gallery'>
+				<div id='left-arrow' class='nav-arrow'><</div>
+				<div id='right-arrow' class='nav-arrow'>></div>
+				<div id='navigator'>
+					<ul>
+					</ul>
+				</div>
+				<img id='gallery-image' src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=">/>
+			</div>
+		</div>
+		<div id='mobile-menu-icon'>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
 		<div id='page-wrapper'>
 			<div id='header'>
 					<nav id='top-nav'>
@@ -14,12 +30,13 @@
 						<li><a href='#story'>Our Story</a></li>
 						<li><a href='#engagement'>Engagement</a></li>
 						<li><a href='#wedding'>Wedding</a></li>
-						<li><a href='#directions'>Directions</a></li>
 						<li><a href='#gallery'>Gallery</a></li>
+						<!--
+						<li><a href='#directions'>Directions</a></li> -->
 						<li><a href='#rsvp'>RSVP</a></li>
 					</nav>
 					<div id='header-text'>
-						<h1 id='top-name'>Hannah</h1>
+						<h1 id='top-name'>Hannah&nbsp;</h1>
 						<h1 id='bottom-name'>& Patrick</h1>
 						<h2>09.02.2018</h2>
 					</div>
@@ -33,9 +50,10 @@
 					<div class='section-container' id='story-text-container'>
 						<div>
 							<span class='section-title'>Our Story</span>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pharetra pellentesque turpis ac egestas. Proin elementum diam odio, eu vestibulum est suscipit vitae. Nunc pulvinar lobortis sapien. Vestibulum a justo quis ipsum consequat porta id sed lacus. Nullam ut sapien eu mauris bibendum vehicula id vel ante. Phasellus eleifend et ligula et iaculis. Donec non auctor massa, et aliquam turpis.</p>
-							<p> Nam eget massa a felis rhoncus porta non a nunc. Suspendisse turpis enim, lobortis sit amet risus vel, vulputate auctor velit. Duis tempus nisi ac sodales posuere. Vestibulum vehicula porttitor elit, quis suscipit diam. Morbi tempor ut diam a porta. Maecenas pulvinar at urna eu dictum. Donec vitae tortor bibendum, faucibus ipsum non, rutrum dolor. Vivamus finibus ligula a arcu aliquam, ac mollis lorem lacinia.</p>
-							<p>Nulla facilisi. Vivamus dui sapien, lobortis non rhoncus id, cursus quis mauris. Fusce euismod turpis mauris, vitae ornare orci consectetur et. Integer quis sem velit. Phasellus id massa eleifend, consectetur augue ac, consectetur eros. Nullam nec metus pellentesque, lacinia nisl et, mattis neque. Suspendisse porttitor et enim at iaculis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis leo tortor, rhoncus eget viverra id, maximus eget velit.</p>
+							<p>It all began with a hat. Patrick and Hannah first met at a Georgetown Greek mixer in the winter of 2010. He was from the University of Maryland, and she was from the University of Virginia. Hannah was skeptical and unimpressed by Patrick, but intrigued. After the party, Hannah requested to take Patrick's hat. Although their initial meeting was unremarkable, they always kept in touch, until Patrick decided to retrieve his hat back from UVA. </p>
+							<p>
+								From there, Hannah and Patrick became inseparable. Even the blizzard of 2010 couldn't keep them apart. From College Park to Charlottesville, from North Potomac to West Chester and Virginia Beach they would always visit each other at every opportunity. Whether it was stay at home TV/Movie night, a trip downtown, or a vacation abroad, Hannah and Patrick always enjoyed each others company. 
+							</p>
 						</div>
 					</div>
 				</div>
@@ -44,13 +62,16 @@
 					<div class='section-container' id='engagement-text-container'>
 						<div>
 							<span class='section-title'>Engagement</span>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pharetra pellentesque turpis ac egestas. Proin elementum diam odio, eu vestibulum est suscipit vitae. Nunc pulvinar lobortis sapien. Vestibulum a justo quis ipsum consequat porta id sed lacus. Nullam ut sapien eu mauris bibendum vehicula id vel ante. Phasellus eleifend et ligula et iaculis. Donec non auctor massa, et aliquam turpis.</p>
 						</div>
+						<p>
+							After dating for almost seven years, Patrick popped the question on the last day of their vacation in Rome, Florence, and Venice. Patrick originally planned to propose on a gondola along the beautiful canals of Venice. However, Hannah booked an atypical excursion where they learned how to row the gondola instead. Hannah had difficulty rowing the gondola and was left frustrated, so Patrick decided not to propose at that time.
+							</p>
+						<p>
+							Luckily, Hannah wanted to visit the San Giorgio Maggiore bell tower to see the sunset. The bell tower overlooked all of Venice and the sky was absolutely stunning! As the sun set and the crowd started thinning out, Patrick got down on one knee and asked the question!
+						</p>
 					</div>
 				</div>
 				<div class='section' id='wedding'>
-					<img class='section-image' src='./styles/images/wedding.jpg' />
-
 					<div class='section-container' id='wedding-text-container'>
 						<div>
 						<span class='section-title-alt'>The Wedding Venue</span>
@@ -71,55 +92,58 @@
 						</div>
 					</div>
 				</div>
-				<div class='section' id='bridal-party'>
+				<div class='section' >
+					<div id='bridal-party'>
 					<div id='bridesmaids'>
 						<span class='section-title-alt'>Bridesmaids</span>
-						<h3>Maid of Honor</h3>
+						<div>Maid of Honor</div>
 						<ul class='bridal-party-profile-list'>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
+							<li id='erin'></li>
+							<li id='linh'></li>
+							<li id='jenny'></li>
+							<li id='katie'></li>
+							<li id='olivia'></li>
+							<li id='winnie'></li>
 						</ul>
 					</div>
 					<div id='groomsmen-women'>
 						<span class='section-title-alt'>Groomsmen/Groomswomen</span>
-						<h3>Best Man</h3>
+						<div>Best Man</div>
 						<ul class='bridal-party-profile-list'>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
+							<li id='donna'></li>
 						</ul>
 					</div>
+					</div>
+					<div id='bridal-party-description'></div>
 				</div>
-				<div class='section' id='directions'>
-					<iframe
-					  width="600"
-					  height="450"
-					  frameborder="0" style="border:0"
-					  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBOowFP-Od2iQW-skqEoRUQpPm0flgIq90
-					    &q=Newton White Mansion Mitchellville, MD" allowfullscreen>
-					</iframe>
+				<!--
+				<div class='section' id='accomadations'>
+					<div class='section-title'>Accomadations</div>
+				</div>
+			-->
+				<div class='section' id='gallery'>
+
+					<img class='section-image' src='./styles/images/gallery.jpg' />
+					<div class='section-container' id='gallery-text-container'>
+						<span class='section-title'>Gallery</span>
+						<span class='link' id='view-gallery'>View Gallery</span>
+					</div>
 				</div>
 				<div class='section' id='rsvp'>
 					<img class='section-image' src='./styles/images/rsvp.jpg' />
 					<div class='section-container' id='rsvp-text-container'>
 						<div>
 							<span class='section-title'>RSVP</span>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pharetra pellentesque turpis ac egestas. Proin elementum diam odio, eu vestibulum est suscipit vitae. Nunc pulvinar lobortis sapien. Vestibulum a justo quis ipsum consequat porta id sed lacus. Nullam ut sapien eu mauris bibendum vehicula id vel ante. Phasellus eleifend et ligula et iaculis. Donec non auctor massa, et aliquam turpis.</p>
-							<div class='align-center'><button>Click to RSVP</button></div>
+							<p>Coming Soon!</p>
+							<!--<div class='align-center'><button>Click to RSVP</button></div> -->
 						</div>
 					</div>
 				</div>
-				
 			</div>
-			<footer>
-				<a href="https://www.freepik.com/free-photo/pink-rose-and-petals-over-light-pink-background-with-space-in-the-middle_1371177.htm">Images courtesy of Freepik</a>
-			</footer>
 		</div>
+		<footer>
+			<a href="https://www.freepik.com/free-photo/pink-rose-and-petals-over-light-pink-background-with-space-in-the-middle_1371177.htm">Images courtesy of Freepik</a>
+		</footer>
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 		<script src="js/wedding.js"></script>
 	</body>
