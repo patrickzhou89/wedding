@@ -11,6 +11,7 @@
 			});
 		}
 	});
+	/* Mobile Menu Icon*/
 	$('#mobile-menu-icon').on('click',function(){
 		$(this).toggleClass('toggle-menu');
 		$('#top-nav').slideToggle();
@@ -21,6 +22,8 @@
 			$('#top-nav').slideToggle(200);
 		});
 	}
+
+	/* Scrolling Fixed Menu */
 	if ($(this).scrollTop() > 147) {
 		$('#top-nav').addClass("scroll");
 	} 
@@ -34,14 +37,22 @@
 		}
 	},100));
 
+	/* Photo Gallery Navigator */
 	var index=1,galleryLength=9;
 	function setGalleryImage(index){
 		$('#gallery-image').attr('src',"./styles/images/gallery/"+index+".jpg");
+		$('#navigator > ul').children('.filled').removeClass('filled');
+		$('#navigator > ul > li[data-index="'+index+'"]').addClass('filled');
+	}
+	function closeGallery(){
+		$('#modal').hide();
+		$('body').removeClass('noscroll');
+		$('#navigator > ul').empty();
 	}
 	$('#view-gallery').on('click',function(){
 		setGalleryImage(index);
 		let appendString="<li class='filled' data-index='1'></li>";
-		for(let i=2;i<galleryLength;i++){
+		for(let i=2;i<=galleryLength;i++){
 			appendString+="<li data-index='"+i+"'></li>";
 		}
 		$('#navigator > ul').append(appendString);
@@ -53,7 +64,6 @@
 		setGalleryImage($this.attr('data-index'));
 		$this.siblings('.filled').removeClass('filled');
 		$this.addClass('filled');
-
 	})
 	$('#left-arrow').on('click',function(){
 		if(index==1){
@@ -71,16 +81,58 @@
 		}
 		setGalleryImage(index);
 	});
-
+	$('#close-modal').on('click',function(){
+		closeGallery();
+	})
 	$('#modal').on('click',function(e){
 		if (e.target !== this){
    		 return;
 		}else{
-			$('#modal').hide();
-			$('body').removeClass('noscroll');
-			$('#navigator > ul').empty();
+			closeGallery();
 		}
 	});
+	$(window).on('keyup',function(e){
+		if(e.keyCode == 27 && $('#modal').is(':visible')){
+			closeGallery();
+		}
+	})
+
+	/* Bridal Party*/
+	var brideanimating=false;
+	$('#bridesmaid-pic-list').on('click','li',function(){
+		if(!brideanimating){
+			brideanimating=true;
+			var $this = $(this);
+			$('#bridesmaids-wrapper').addClass('selected');
+			var position = $this.position();
+			$this.css({'left':position.left+'px','top':(position.top)+'px','opacity':'.5'}).addClass('selected');
+			var bio = $this.attr('id')+'-bio';
+			$('#bridesmaids-bio').show().html($('#'+bio).html());
+			$this.siblings('.selected').removeClass('selected').css({'margin-left':"",'opacity':""});
+			$this.animate({'top':0,'left':'50%','margin-left':(window.outerWidth>1025)?'-100px':'-62.5px','opacity':'1'},400,'swing',function(){
+				brideanimating=false;
+			});
+		}
+	})
+	var groomsmenanimating=false;
+	$('#groomsmen-pic-list').on('click','li',function(){
+		var $this = $(this);
+		if(!$this.hasClass('no-bio')){
+			if(!groomsmenanimating){
+				groomsmenanimating=true;
+				$('#groomsmen-wrapper').addClass('selected');
+				var position = $this.position();
+				$this.css({'left':position.left+'px','top':(position.top)+'px','opacity':'.5'}).addClass('selected');
+				var bio = $this.attr('id')+'-bio';
+				$('#groomsmen-bio').show().html($('#'+bio).html());
+				$this.siblings('.selected').removeClass('selected').css({'margin-left':"",'opacity':""});
+				$this.animate({'top':0,'left':'50%','margin-left':(window.outerWidth>1025)?'-100px':'-62.5px','opacity':'1'},400,'swing',function(){
+					groomsmenanimating=false;
+				});
+			}
+		}
+	})
+
 })(window, document, $);
 
 function debounce(func, wait, immediate) {
