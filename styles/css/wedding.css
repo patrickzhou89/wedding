@@ -57,7 +57,8 @@ ul, li {
 
 .superscript {
   vertical-align: super;
-  font-size: 12px; }
+  font-size: 12px;
+  text-transform: none; }
 
 p {
   margin: 5px 0;
