@@ -33,14 +33,16 @@ h3 {
 
 h4 {
   font-size: 16px;
-  margin: 4px;
+  margin: 8px;
   font-weight: 600;
-  color: #7282a7;
+  color: #212121;
   text-transform: uppercase;
-  font-style: normal; }
+  font-style: normal;
+  text-align: center; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: inherit; }
   a:visited {
     color: inherit; }
 
