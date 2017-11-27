@@ -21,7 +21,7 @@ h1{
 }
 h2{
 	font-size: 34px;
-    margin: 5px;
+    padding: 5px;
     @media screen and (max-width:$standard_res){
         font-size:26px;
     }
@@ -231,16 +231,14 @@ body{
     }
     @media screen and (max-width:$tablet){
         width:100%;
-        margin:0;
-        left:0;
-        top:0;
+        margin:0 0 2px 0;
+        position:static;
         h1{
             display:inline-block;
             margin-bottom:5px;
         }
         height:auto;
-
-        background: rgba(128, 127, 127, .7);
+        background:linear-gradient(to bottom, #949494 30%, rgba(128, 127, 127, 1));
     }
 }
 #bottom-name{
@@ -287,12 +285,13 @@ body{
             border-bottom:1px solid #fff;
             cursor:pointer;
             padding:0;
+            font-size:20px;
             &:hover{
                 background-color: #bdbdbd;
                 color:#7282a7;
             }
             a{
-                padding:12px;
+                padding:12px 0;
             }
         }
     }
@@ -304,7 +303,7 @@ body{
 	box-shadow: 0 0 10px 2px #757575;
     @media screen and (max-width:$standard_res){
         width:100%;
-        min-width:600px;
+        min-width:360px;
     }
 }
 
@@ -344,6 +343,9 @@ body{
     font-family: sverigedecorated;
     text-align: center;
     display:block;
+    @media screen and (max-width:$tablet){
+        font-size: 30px;
+    }
 }
 .section-container{
 	position: absolute;
@@ -357,11 +359,9 @@ body{
         padding:0 20px 10px 20px;
     }
     @media screen and (max-width:$tablet){
-        left: 0 !important;
-        top: 0 !important;
-        bottom: auto !important;
         width: 100% !important;
-        margin-left: 0 !important;
+        margin-left:0 !important;
+        position:static;
     }
 }
 #story-text-container{
@@ -436,7 +436,7 @@ body{
 	.picture-wrapper{
 		text-align: center;
 	}
-    background-image:url('../images/wedding.jpg');
+    background-image:url('../images/1024/wedding.jpg');
     background-size: cover;
     min-height:900px;
     @media screen and (max-width:$standard_res){
@@ -669,6 +669,7 @@ body{
 }
 footer{
     width: 80%;
+    min-width:360px;
     margin: auto;
     text-align: center;
     font-style: italic;

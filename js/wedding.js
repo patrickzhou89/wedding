@@ -1,4 +1,11 @@
 (function(window, document, $, undefined){
+	/* Lazy load images*/
+	if(window.outerWidth>1024){
+		$('.section-image').each(function(i){
+			$(this).attr('src', $(this).attr('src').replace('1024','1600'));
+		});
+	}
+
 	$("a").on('click',function(e){
 		if(this.hash !==""){
 			e.preventDefault();
