@@ -38,7 +38,7 @@
 	},100));
 
 	/* Photo Gallery Navigator */
-	var index=1,galleryLength=11;
+	var index=1,galleryLength=10;
 	function setGalleryImage(index){
 		$('#gallery-image').attr('src',"./styles/images/gallery/"+index+".jpg");
 		$('#navigator > ul').children('.filled').removeClass('filled');
