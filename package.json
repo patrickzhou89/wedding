@@ -1,0 +1,32 @@
+{
+  "name": "wedding",
+  "version": "1.0.0",
+  "description": "Wedding Website",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "pump": "^1.0.3"
+  },
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-shell": "^0.6.3",
+    "gulp-uglify": "^3.0.0",
+    "gulp-useref": "^3.1.3",
+    "run-sequence": "^2.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pdpscarface/wedding.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pdpscarface/wedding/issues"
+  },
+  "homepage": "https://github.com/pdpscarface/wedding#readme"
+}
