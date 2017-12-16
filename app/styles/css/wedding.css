@@ -67,11 +67,9 @@ p {
 @font-face {
   font-family: mademoisellecamille;
   src: url("../fonts/Mademoiselle Camille L.ttf"); }
-
 @font-face {
   font-family: sverigedecorated;
   src: url("../fonts/SverigeScriptDecorated_Demo.ttf"); }
-
 .align-center {
   text-align: center; }
 
@@ -490,6 +488,12 @@ body {
 #donna {
   background-image: url("../images/groomsmen/donna.png"); }
 
+#aaron {
+  background-image: url("../images/groomsmen/aaron.png"); }
+
+#brian {
+  background-image: url("../images/groomsmen/brian.png"); }
+
 .bridal-party-profile-list {
   display: flex;
   display: -webkit-flex;
@@ -625,3 +629,5 @@ footer {
   footer a {
     display: block;
     color: #666; }
+
+/*# sourceMappingURL=wedding.css.map */
