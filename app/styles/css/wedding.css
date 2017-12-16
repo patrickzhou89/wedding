@@ -67,9 +67,11 @@ p {
 @font-face {
   font-family: mademoisellecamille;
   src: url("../fonts/Mademoiselle Camille L.ttf"); }
+
 @font-face {
   font-family: sverigedecorated;
   src: url("../fonts/SverigeScriptDecorated_Demo.ttf"); }
+
 .align-center {
   text-align: center; }
 
@@ -623,5 +625,3 @@ footer {
   footer a {
     display: block;
     color: #666; }
-
-/*# sourceMappingURL=wedding.css.map */

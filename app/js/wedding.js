@@ -58,8 +58,8 @@
 	}
 	$('#view-gallery').on('click',function(){
 		setGalleryImage(index);
-		let appendString="<li class='filled' data-index='1'></li>";
-		for(let i=2;i<=galleryLength;i++){
+		var appendString="<li class='filled' data-index='1'></li>";
+		for(var i=2;i<=galleryLength;i++){
 			appendString+="<li data-index='"+i+"'></li>";
 		}
 		$('#navigator > ul').append(appendString);
