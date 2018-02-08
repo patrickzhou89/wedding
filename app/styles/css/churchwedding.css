@@ -1,0 +1,28 @@
+#church-wedding-body {
+  background: url("../images/churchwedding/stamp_background.png"); }
+
+#church-wedding-text-container {
+  top: 100px;
+  width: 800px;
+  left: calc(50% - 400px);
+  box-shadow: none;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: background-color 1s; }
+  @media screen and (min-width: 1025px) {
+    #church-wedding-text-container:hover {
+      background-color: rgba(255, 255, 255, 0.8); } }
+
+#couple-shower-text-container {
+  top: 100px;
+  left: calc(50% - 400px);
+  width: 800px;
+  padding: 0 60px 20px 60px;
+  box-shadow: none;
+  box-shadow: none;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: background-color 1s; }
+  @media screen and (min-width: 1025px) {
+    #couple-shower-text-container:hover {
+      background-color: rgba(255, 255, 255, 0.8); } }
+
+/*# sourceMappingURL=churchwedding.css.map */
