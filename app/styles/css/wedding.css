@@ -52,6 +52,9 @@ a {
   .link:hover {
     opacity: .5; }
 
+.italic {
+  font-style: italic; }
+
 ul, li {
   list-style: none; }
 
@@ -72,6 +75,9 @@ p {
   src: url("../fonts/SverigeScriptDecorated_Demo.ttf"); }
 .align-center {
   text-align: center; }
+
+.justify {
+  text-align: justify; }
 
 .bold {
   font-weight: bold; }
@@ -621,6 +627,17 @@ body {
   background-color: rgba(158, 158, 158, 0.88);
   transition: background-color 1s;
   text-align: center; }
+
+#registry-text-container {
+  top: 100px;
+  width: 600px;
+  left: calc(50% - 300px);
+  box-shadow: none;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: background-color 1s; }
+  @media screen and (min-width: 1025px) {
+    #registry-text-container:hover {
+      background-color: rgba(255, 255, 255, 0.8); } }
 
 footer {
   width: 80%;

@@ -1,8 +1,38 @@
 
 #church-wedding-body{
-    background:url("../images/churchwedding/stamp_background.png")
+    background:url("../images/churchwedding/stamp_background.png");
 }
-
+#ceremony{
+	background:url("../images/churchwedding/ceremony_background_left.png") top left repeat-y, url("../images/churchwedding/ceremony_background_right.png") top right repeat-y;
+	background-color:#e6d7c9;
+	background-repeat: repeat-y;
+	min-height:600px;
+	padding:60px 0;
+}
+#ceremony-text-container{
+	margin:0 auto;
+	position:static;
+	padding:15px;
+	width:800px;
+	color:#532f24;
+	background-color:rgba(204,174,138,.6);
+    transition: background-color 1s;
+    .sponsors{
+	    h4{
+			color:#532f24;
+	    }
+    	margin:0 0 20px 0;
+    	p{
+    		margin:0 auto;
+    		width:75%;
+    	}
+    	&:after{
+    		content: url('../images/churchwedding/ceremony_divider.png');
+    		display:block;
+    		text-align:center;
+    	}
+    }
+}
 #church-wedding-text-container{
 	top: 100px;
     width: 800px;
