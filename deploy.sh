@@ -3,6 +3,7 @@
 #Backup old production folder
 if [ -d ~/Website/wedding ]; then
     echo Backing up old wedding files...
+    rm -rf ~/Website/wedding.old
     mv ~/Website/wedding/ ~/Website/wedding.old
     mkdir ~/Website/wedding
 fi
