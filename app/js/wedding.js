@@ -45,9 +45,15 @@
 	},100));
 
 	/* Photo Gallery Navigator */
-	var index=1,galleryLength=10;
+	var index=1,galleryLength,type;
 	function setGalleryImage(index){
-		$('#gallery-image').attr('src',"./styles/images/gallery/"+index+".jpg");
+		var src = "./styles/images/gallery/";
+		galleryLength=10;
+		if(type!=null && type=="church"){
+			src="./styles/images/churchwedding/gallery/";
+			galleryLength=5;
+		}
+		$('#gallery-image').attr('src',src+index+".jpg");
 		$('#navigator > ul').children('.filled').removeClass('filled');
 		$('#navigator > ul > li[data-index="'+index+'"]').addClass('filled');
 	}
@@ -57,6 +63,7 @@
 		$('#navigator > ul').empty();
 	}
 	$('#view-gallery').on('click',function(){
+		type=$(this).attr("data-type");
 		setGalleryImage(index);
 		var appendString="<li class='filled' data-index='1'></li>";
 		for(var i=2;i<=galleryLength;i++){
