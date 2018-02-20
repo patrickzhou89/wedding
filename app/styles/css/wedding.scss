@@ -15,9 +15,6 @@ h1{
     @media screen and (max-width:$standard_res){
         font-size:35px;
     }
-    @media screen and (max-width:$tablet_horizontal){
-        font-size:28px;
-    }
 }
 h2{
 	font-size: 34px;
@@ -83,9 +80,6 @@ p{
 }
 .align-center{
     text-align:center;
-}
-.justify{
-    text-align:justify;
 }
 .bold{
 	font-weight: bold;
@@ -337,8 +331,8 @@ body{
         font-size:125px;
     }
     @media screen and (max-width:$tablet_horizontal){
-        font-size:75px;
-        margin: -10px 0 -15px;
+        font-size:110px;
+        margin: -5px 0;
     }
 
 }
@@ -692,10 +686,13 @@ body{
     box-shadow: none;
     background-color:rgba(255,255,255,.6);
     transition: background-color 1s;
-     @media screen and (min-width:1025px){
+    @media screen and (min-width:1025px){
         &:hover{
             background-color: rgba(255, 255, 255, .8);
         }
+    }
+    @media screen and (max-width:$tablet_horizontal){
+        background:rgba(158, 158, 158, 0.88);
     }
 }
 footer{

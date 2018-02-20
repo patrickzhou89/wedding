@@ -24,9 +24,16 @@
       margin: 0 auto;
       width: 75%; }
     #ceremony-text-container .sponsors:after {
-      content: url("../images/churchwedding/ceremony_divider.png");
+      content: "";
       display: block;
-      text-align: center; }
+      text-align: center;
+      width: 100%;
+      height: 98px;
+      background-size: 100% 100%;
+      background-image: url(../images/churchwedding/ceremony_divider.png); }
+      @media screen and (max-width: 468px) {
+        #ceremony-text-container .sponsors:after {
+          height: 75px; } }
 
 #church-wedding-text-container {
   top: 100px;
@@ -51,3 +58,5 @@
   @media screen and (min-width: 1025px) {
     #couple-shower-text-container:hover {
       background-color: rgba(255, 255, 255, 0.8); } }
+
+/*# sourceMappingURL=churchwedding.css.map */

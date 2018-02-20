@@ -11,9 +11,6 @@ h1 {
   @media screen and (max-width: 1366px) {
     h1 {
       font-size: 35px; } }
-  @media screen and (max-width: 1024px) {
-    h1 {
-      font-size: 28px; } }
 
 h2 {
   font-size: 34px;
@@ -70,16 +67,11 @@ p {
 @font-face {
   font-family: mademoisellecamille;
   src: url("../fonts/Mademoiselle Camille L.ttf"); }
-
 @font-face {
   font-family: sverigedecorated;
   src: url("../fonts/SverigeScriptDecorated_Demo.ttf"); }
-
 .align-center {
   text-align: center; }
-
-.justify {
-  text-align: justify; }
 
 .bold {
   font-weight: bold; }
@@ -314,8 +306,8 @@ body {
       font-size: 125px; } }
   @media screen and (max-width: 1024px) {
     .section-title {
-      font-size: 75px;
-      margin: -10px 0 -15px; } }
+      font-size: 110px;
+      margin: -5px 0; } }
 
 .section-title-alt {
   padding: 30px 0 15px 0;
@@ -640,6 +632,9 @@ body {
   @media screen and (min-width: 1025px) {
     #registry-text-container:hover {
       background-color: rgba(255, 255, 255, 0.8); } }
+  @media screen and (max-width: 1024px) {
+    #registry-text-container {
+      background: rgba(158, 158, 158, 0.88); } }
 
 footer {
   width: 80%;
@@ -651,3 +646,5 @@ footer {
   footer a {
     display: block;
     color: #666; }
+
+/*# sourceMappingURL=wedding.css.map */
