@@ -45,6 +45,17 @@
   @media screen and (min-width: 1025px) {
     #church-wedding-text-container:hover {
       background-color: rgba(255, 255, 255, 0.8); } }
+  @media screen and (max-width: 1366px) {
+    #church-wedding-text-container {
+      top: 30px;
+      width: 500px;
+      left: calc(50% - 250px); } }
+  @media screen and (max-width: 1024px) {
+    #church-wedding-text-container .section-image {
+      display: none; } }
+  @media screen and (max-width: 768px) {
+    #church-wedding-text-container {
+      background: rgba(158, 158, 158, 0.95); } }
 
 #couple-shower-text-container {
   top: 100px;
@@ -58,5 +69,16 @@
   @media screen and (min-width: 1025px) {
     #couple-shower-text-container:hover {
       background-color: rgba(255, 255, 255, 0.8); } }
+  @media screen and (max-width: 1366px) {
+    #couple-shower-text-container {
+      top: 40px;
+      width: 600px;
+      left: calc(50% - 300px); } }
+  @media screen and (max-width: 1024px) {
+    #couple-shower-text-container .section-image {
+      display: none; } }
+  @media screen and (max-width: 768px) {
+    #couple-shower-text-container {
+      background: rgba(158, 158, 158, 0.95); } }
 
 /*# sourceMappingURL=churchwedding.css.map */

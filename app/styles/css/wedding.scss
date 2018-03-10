@@ -224,9 +224,9 @@ body{
         top: 58px;
     }
     @media screen and (max-width:$tablet_horizontal){
-        width: 200px;
-        height: 115px;
-        margin-left: -100px;
+        width: 210px;
+        height: 130px;
+        margin-left: -105px;
         top: 57px;
     }
     @media screen and (max-width:$tablet){
@@ -362,6 +362,7 @@ body{
         width: 100% !important;
         margin-left:0 !important;
         position:static;
+        color:#fff;
     }
 }
 #story-text-container{
@@ -534,6 +535,9 @@ body{
 }
 #brian{
     background-image:url('../images/groomsmen/brian.png');
+}
+#ritchie{
+    background-image:url('../images/groomsmen/ritchie.png');
 }
 .bridal-party-profile-list{
     display:flex;
