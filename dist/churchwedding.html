@@ -2,11 +2,23 @@
 <html>
 	<header>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="styles/css/wedding.min.css">
+		<link rel="stylesheet" href="styles/css/churchwedding.min.css">
 		<link rel="icon" href="images/favicon.png" type="image/png">
  		<title>Couple Shower | Hannah Tajo and Patrick's Wedding</title>
 	</header>
 	<body id="church-wedding-body">
+		<div id='modal'>
+			<div id='picture-gallery'>
+				<div id='left-arrow' class='nav-arrow'><</div>
+				<div id='right-arrow' class='nav-arrow'>></div>
+				<div id='close-modal'>X</div>
+				<div id='navigator'>
+					<ul>
+					</ul>
+				</div>
+				<img id='gallery-image' src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=">/>
+			</div>
+		</div>
 		<div id='page-wrapper'>
 			<div id='header'>
 					<nav id='top-nav'>
@@ -89,7 +101,11 @@
 							<div class='sponsors'>
 							<h3>Readers</h3>
 							<h4>Nuri Cha & Anne Cho</h4>
-						</div>
+							</div>
+							<div class='sponsors'>
+							<h3>Flower Girl</h3>
+							<h4>Alaina Price</h4>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -117,7 +133,7 @@
 				<div class='section' id='gallery'>
 					<div class='section-container' id='gallery-text-container'>
 						<span class='section-title'>Gallery</span>
-						<span class='link' id='view-gallery'>View Gallery</span>
+						<span class='link' id='view-gallery' data-type="church">View Gallery</span>
 					</div>
 					<img class='section-image' src='./styles/images/1024/gallery.jpg' />
 				</div>
