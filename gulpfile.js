@@ -6,12 +6,16 @@ let del = require('del');
 let useref = require('gulp-useref');
 let gulpIf = require('gulp-if');
 let uglify = require('gulp-uglify');
+let cachebust = require('gulp-cache-bust');
 
 gulp.task('useref',()=> {
     return gulp.src('app/*.html')
 	.pipe(useref())
 	.pipe(gulpIf('*.js',uglify()))
         .pipe(gulpIf('*.css',cleanCSS()))
+        .pipe(cachebust({
+	    type: 'timestamp'
+	}))
 	.pipe(gulp.dest('dist'));
 });
 
