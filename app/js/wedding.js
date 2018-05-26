@@ -57,11 +57,17 @@
 		$('#navigator > ul').children('.filled').removeClass('filled');
 		$('#navigator > ul > li[data-index="'+index+'"]').addClass('filled');
 	}
-	function closeGallery(){
+	function closeModal(){
 		$('#modal').hide();
+		$('#picture-gallery').hide();
+		$('#rsvp-form').hide();
 		$('body').removeClass('noscroll');
 		$('#navigator > ul').empty();
 	}
+	function openModalBase(){
+		$('body').addClass('noscroll');
+		$('#modal').show();
+}
 	$('#view-gallery').on('click',function(){
 		type=$(this).attr("data-type");
 		setGalleryImage(index);
@@ -70,8 +76,8 @@
 			appendString+="<li data-index='"+i+"'></li>";
 		}
 		$('#navigator > ul').append(appendString);
-		$('body').addClass('noscroll');
-		$('#modal').show();
+		openModalBase();
+		$('#picture-gallery').show();
 	});
 	$('#navigator > ul').on('click','li',function(){
 		var $this=$(this);
@@ -96,18 +102,18 @@
 		setGalleryImage(index);
 	});
 	$('#close-modal').on('click',function(){
-		closeGallery();
+		closeModal();
 	})
 	$('#modal').on('click',function(e){
 		if (e.target !== this){
    		 return;
 		}else{
-			closeGallery();
+			closeModal();
 		}
 	});
 	$(window).on('keyup',function(e){
 		if(e.keyCode == 27 && $('#modal').is(':visible')){
-			closeGallery();
+			closeModal();
 		}
 	})
 
@@ -147,6 +153,21 @@
 		}
 	})
 
+	//RSVP
+	$('#rsvp').on('click', function(){
+		openModalBase();
+		$('#rsvp-form-wrapper').show();
+	})
+	$('#rsvp-name').on('click', function(){
+		console.log($("#rsvp-form").serializeFormJSON());
+			$.ajax({
+				method: "POST",
+				url: "/rsvp",
+				data: $("#rsvp-form").serializeFormJSON()
+			});
+		return false;
+	})
+
 })(window, document, $);
 
 function debounce(func, wait, immediate) {
@@ -163,3 +184,21 @@ function debounce(func, wait, immediate) {
 		if (callNow) func.apply(context, args);
 	};
 };
+(function ($) {
+    $.fn.serializeFormJSON = function () {
+
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function () {
+            if (o[this.name]) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            } else {
+                o[this.name] = this.value || '';
+            }
+        });
+        return o;
+    };
+})(jQuery);

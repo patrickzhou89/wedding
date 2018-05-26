@@ -68,11 +68,9 @@ p {
 @font-face {
   font-family: mademoisellecamille;
   src: url("../fonts/Mademoiselle Camille L.ttf"); }
-
 @font-face {
   font-family: sverigedecorated;
   src: url("../fonts/SverigeScriptDecorated_Demo.ttf"); }
-
 .align-center {
   text-align: center; }
 
@@ -110,6 +108,7 @@ body {
   display: none; }
 
 #picture-gallery {
+  display: none;
   margin: auto;
   position: absolute;
   height: 80%;
@@ -380,6 +379,20 @@ body {
   @media screen and (min-width: 1025px) {
     #rsvp-text-container:hover {
       background-color: #7282a7; } }
+
+#rsvp-form-wrapper {
+  display: none;
+  margin: auto;
+  position: absolute;
+  min-height: 400px;
+  width: 40%;
+  min-width: 700px;
+  text-align: center;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  top: 25%;
+  border-radius: 10px; }
 
 #engagement-text-container {
   width: 600px;
@@ -697,3 +710,5 @@ footer {
   footer a {
     display: block;
     color: #666; }
+
+/*# sourceMappingURL=wedding.css.map */
