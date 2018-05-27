@@ -1,33 +1,45 @@
 html {
-  font-family: 'Myriad Pro','Helvetica','sans-serif';
-  font-size: 16px; }
-  @media screen and (max-width: 1366px) {
-    html {
-      font-size: 14px; } }
+  font-family: "Myriad Pro", "Helvetica", "sans-serif";
+  font-size: 16px;
+}
+@media screen and (max-width: 1366px) {
+  html {
+    font-size: 14px;
+  }
+}
 
 h1 {
   font-size: 46px;
-  font-family: sverigedecorated; }
-  @media screen and (max-width: 1366px) {
-    h1 {
-      font-size: 35px; } }
+  font-family: sverigedecorated;
+}
+@media screen and (max-width: 1366px) {
+  h1 {
+    font-size: 35px;
+  }
+}
 
 h2 {
   font-size: 34px;
-  padding: 5px; }
-  @media screen and (max-width: 1366px) {
-    h2 {
-      font-size: 26px; } }
-  @media screen and (max-width: 1024px) {
-    h2 {
-      font-size: 22px; } }
+  padding: 5px;
+}
+@media screen and (max-width: 1366px) {
+  h2 {
+    font-size: 26px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  h2 {
+    font-size: 22px;
+  }
+}
 
 h3 {
   font-size: 100px;
   margin: -15px;
   text-align: center;
   text-shadow: 1px 1px #000;
-  font-family: mademoisellecamille; }
+  font-family: mademoisellecamille;
+}
 
 h4 {
   font-size: 16px;
@@ -36,49 +48,63 @@ h4 {
   color: #212121;
   text-transform: uppercase;
   font-style: normal;
-  text-align: center; }
+  text-align: center;
+}
 
 a {
   text-decoration: none;
-  color: inherit; }
-  a:visited {
-    color: inherit; }
+  color: inherit;
+}
+a:visited {
+  color: inherit;
+}
 
 .link {
   text-decoration: underline;
-  cursor: pointer; }
-  .link:hover {
-    opacity: .5; }
+  cursor: pointer;
+}
+.link:hover {
+  opacity: 0.5;
+}
 
 .italic {
-  font-style: italic; }
+  font-style: italic;
+}
 
 ul, li {
-  list-style: none; }
+  list-style: none;
+}
 
 .superscript {
   vertical-align: super;
   font-size: 12px;
-  text-transform: none; }
+  text-transform: none;
+}
 
 p {
   margin: 5px 0;
-  line-height: 1.3; }
+  line-height: 1.3;
+}
 
 @font-face {
   font-family: mademoisellecamille;
-  src: url("../fonts/Mademoiselle Camille L.ttf"); }
+  src: url("../fonts/Mademoiselle Camille L.ttf");
+}
 @font-face {
   font-family: sverigedecorated;
-  src: url("../fonts/SverigeScriptDecorated_Demo.ttf"); }
+  src: url("../fonts/SverigeScriptDecorated_Demo.ttf");
+}
 .align-center {
-  text-align: center; }
+  text-align: center;
+}
 
 .bold {
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 .italic {
-  font-weight: italic; }
+  font-weight: italic;
+}
 
 button {
   margin: 20px 0;
@@ -88,15 +114,19 @@ button {
   background: linear-gradient(to bottom, #949494, #757575);
   color: #fff;
   border: 1px solid #9e9e9e;
-  border-radius: 8px; }
-  button:hover {
-    background: linear-gradient(to bottom, rgba(148, 148, 148, 0.8), rgba(117, 117, 117, 0.8));
-    cursor: pointer; }
+  border-radius: 8px;
+}
+button:hover {
+  background: linear-gradient(to bottom, rgba(148, 148, 148, 0.8), rgba(117, 117, 117, 0.8));
+  cursor: pointer;
+}
 
 body {
-  background: url("../images/background.jpg"); }
-  body.noscroll {
-    overflow: hidden; }
+  background: url("../images/background.jpg");
+}
+body.noscroll {
+  overflow: hidden;
+}
 
 #modal {
   position: fixed;
@@ -105,7 +135,8 @@ body {
   height: 100%;
   z-index: 10;
   background-color: rgba(102, 102, 102, 0.6);
-  display: none; }
+  display: none;
+}
 
 #picture-gallery {
   display: none;
@@ -118,18 +149,24 @@ body {
   text-align: center;
   left: 0;
   right: 0;
-  min-height: 600px; }
+  min-height: 600px;
+}
+#picture-gallery img {
+  height: 100%;
+}
+@media screen and (max-width: 1366px) {
   #picture-gallery img {
-    height: 100%; }
-    @media screen and (max-width: 1366px) {
-      #picture-gallery img {
-        max-height: 420px; } }
-  @media screen and (max-width: 1366px) {
-    #picture-gallery {
-      width: 90%;
-      height: auto;
-      top: 20%;
-      min-height: 0; } }
+    max-height: 420px;
+  }
+}
+@media screen and (max-width: 1366px) {
+  #picture-gallery {
+    width: 90%;
+    height: auto;
+    top: 20%;
+    min-height: 0;
+  }
+}
 
 .nav-arrow {
   position: absolute;
@@ -137,15 +174,19 @@ body {
   margin-top: -25px;
   color: #fff;
   font-size: 50px;
-  cursor: pointer; }
-  .nav-arrow:hover {
-    opacity: .6; }
+  cursor: pointer;
+}
+.nav-arrow:hover {
+  opacity: 0.6;
+}
 
 #left-arrow {
-  left: 20px; }
+  left: 20px;
+}
 
 #right-arrow {
-  right: 20px; }
+  right: 20px;
+}
 
 #close-modal {
   position: absolute;
@@ -153,40 +194,49 @@ body {
   right: 5px;
   color: #fff;
   font-size: 20px;
-  cursor: pointer; }
-  #close-modal:hover {
-    opacity: .6; }
+  cursor: pointer;
+}
+#close-modal:hover {
+  opacity: 0.6;
+}
 
 #navigator {
   position: absolute;
   bottom: 10px;
   left: 0;
   right: 0;
-  margin: 0 auto; }
-  #navigator ul {
-    display: flex;
-    display: -webkit-flex;
-    justify-content: center; }
-    #navigator ul li {
-      height: 15px;
-      width: 15px;
-      border-radius: 8px;
-      border: 2px solid white;
-      cursor: pointer;
-      margin: 0 4px 0 4px;
-      background-color: rgba(66, 66, 66, 0.8); }
-      #navigator ul li.filled {
-        background-color: #7282a7; }
+  margin: 0 auto;
+}
+#navigator ul {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+}
+#navigator ul li {
+  height: 15px;
+  width: 15px;
+  border-radius: 8px;
+  border: 2px solid white;
+  cursor: pointer;
+  margin: 0 4px 0 4px;
+  background-color: rgba(66, 66, 66, 0.8);
+}
+#navigator ul li.filled {
+  background-color: #7282a7;
+}
 
 #header {
   background: linear-gradient(to bottom, #afafaf, #949494);
   color: #fff;
   box-shadow: 0 1px 5px 1px #757575;
   padding: 10px 0;
-  position: relative; }
-  @media screen and (max-width: 768px) {
-    #header {
-      padding: 0; } }
+  position: relative;
+}
+@media screen and (max-width: 768px) {
+  #header {
+    padding: 0;
+  }
+}
 
 #header-text {
   text-align: center;
@@ -195,121 +245,156 @@ body {
   background: linear-gradient(to bottom, #949494 30%, rgba(128, 127, 127, 0.7));
   position: absolute;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
-  z-index: 2; }
-  @media screen and (min-width: 769px) {
-    #header-text {
-      left: 50%;
-      top: 59px;
-      margin-left: -150px;
-      border-bottom-right-radius: 200px;
-      border-bottom-left-radius: 200px; } }
-  @media screen and (max-width: 1366px) {
-    #header-text {
-      width: 250px;
-      height: 150px;
-      margin-left: -125px;
-      top: 58px; } }
-  @media screen and (max-width: 1024px) {
-    #header-text {
-      width: 210px;
-      height: 130px;
-      margin-left: -105px;
-      top: 57px; } }
-  @media screen and (max-width: 768px) {
-    #header-text {
-      width: 100%;
-      margin: 0 0 2px 0;
-      position: static;
-      height: auto;
-      background: linear-gradient(to bottom, #949494 30%, #807f7f); }
-      #header-text h1 {
-        display: inline-block;
-        margin-bottom: 5px; } }
+  z-index: 2;
+}
+@media screen and (min-width: 769px) {
+  #header-text {
+    left: 50%;
+    top: 59px;
+    margin-left: -150px;
+    border-bottom-right-radius: 200px;
+    border-bottom-left-radius: 200px;
+  }
+}
+@media screen and (max-width: 1366px) {
+  #header-text {
+    width: 250px;
+    height: 150px;
+    margin-left: -125px;
+    top: 58px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  #header-text {
+    width: 210px;
+    height: 130px;
+    margin-left: -105px;
+    top: 57px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #header-text {
+    width: 100%;
+    margin: 0 0 2px 0;
+    position: static;
+    height: auto;
+    background: linear-gradient(to bottom, #949494 30%, #807f7f);
+  }
+  #header-text h1 {
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+}
 
 #bottom-name {
-  margin-top: 20px; }
+  margin-top: 20px;
+}
 
 #top-nav {
   width: 100%;
-  text-transform: uppercase; }
-  #top-nav li {
-    padding: 12px;
-    flex: 1;
-    -webkit-flex: 1;
-    text-align: center; }
-    #top-nav li a {
-      display: block;
-      color: #f5f5f5;
-      transition: all .5s;
-      -webkit-transition: all .5s; }
-      #top-nav li a:hover {
-        color: #fff;
-        text-shadow: 0 0 1px #fff; }
-  #top-nav.scroll {
-    background-color: rgba(66, 66, 66, 0.8);
+  text-transform: uppercase;
+}
+#top-nav li {
+  padding: 12px;
+  flex: 1;
+  -webkit-flex: 1;
+  text-align: center;
+}
+#top-nav li a {
+  display: block;
+  color: #f5f5f5;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+#top-nav li a:hover {
+  color: #fff;
+  text-shadow: 0 0 1px #fff;
+}
+#top-nav.scroll {
+  background-color: rgba(66, 66, 66, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  padding: 10px 0 0 10px;
+}
+@media screen and (min-width: 769px) {
+  #top-nav {
+    display: inline-flex !important;
+    display: -webkit-inline-flex !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  #top-nav {
+    display: none;
+    z-index: 3;
     position: fixed;
     top: 0;
-    left: 0;
-    z-index: 5;
-    padding: 10px 0 0 10px; }
-  @media screen and (min-width: 769px) {
-    #top-nav {
-      display: inline-flex !important;
-      display: -webkit-inline-flex !important; } }
-  @media screen and (max-width: 768px) {
-    #top-nav {
-      display: none;
-      z-index: 3;
-      position: fixed;
-      top: 0; }
-      #top-nav li {
-        background-color: #9e9e9e;
-        border-bottom: 1px solid #fff;
-        cursor: pointer;
-        padding: 0;
-        font-size: 20px; }
-        #top-nav li:hover {
-          background-color: #bdbdbd;
-          color: #7282a7; }
-        #top-nav li a {
-          padding: 12px 0; } }
+  }
+  #top-nav li {
+    background-color: #9e9e9e;
+    border-bottom: 1px solid #fff;
+    cursor: pointer;
+    padding: 0;
+    font-size: 20px;
+  }
+  #top-nav li:hover {
+    background-color: #bdbdbd;
+    color: #7282a7;
+  }
+  #top-nav li a {
+    padding: 12px 0;
+  }
+}
 
 #page-wrapper {
   width: 80%;
   min-width: 1536px;
   margin: 0 auto;
-  box-shadow: 0 0 10px 2px #757575; }
-  @media screen and (max-width: 1366px) {
-    #page-wrapper {
-      width: 100%;
-      min-width: 360px; } }
+  box-shadow: 0 0 10px 2px #757575;
+}
+@media screen and (max-width: 1366px) {
+  #page-wrapper {
+    width: 100%;
+    min-width: 360px;
+  }
+}
 
 #page-content {
-  margin: 0 0 20px 0; }
+  margin: 0 0 20px 0;
+}
 
 #main-image {
-  width: 100%; }
+  width: 100%;
+}
 
 .section {
   position: relative;
   font-size: 0;
-  border-bottom: 3px solid #7282a7; }
-  .section img.section-image {
-    width: 100%; }
+  border-bottom: 3px solid #7282a7;
+}
+.section img.section-image {
+  width: 100%;
+}
 
 .section-title {
   font-size: 150px;
   font-family: mademoisellecamille;
   text-shadow: 1px 1px #000;
   text-align: center;
-  display: block; }
-  @media screen and (max-width: 1366px) {
-    .section-title {
-      font-size: 125px; } }
-  @media screen and (max-width: 1024px) {
-    .section-title {
-      font-size: 110px;
-      margin: -5px 0; } }
+  display: block;
+}
+@media screen and (max-width: 1366px) {
+  .section-title {
+    font-size: 125px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .section-title {
+    font-size: 110px;
+    margin: -5px 0;
+  }
+}
 
 .section-title-alt {
   padding: 30px 0 15px 0;
@@ -317,10 +402,13 @@ body {
   font-size: 45px;
   font-family: sverigedecorated;
   text-align: center;
-  display: block; }
-  @media screen and (max-width: 768px) {
-    .section-title-alt {
-      font-size: 30px; } }
+  display: block;
+}
+@media screen and (max-width: 768px) {
+  .section-title-alt {
+    font-size: 30px;
+  }
+}
 
 .section-container {
   position: absolute;
@@ -328,17 +416,22 @@ body {
   z-index: 2;
   box-shadow: 0px 1px 6px 1px #757575;
   font-size: 16px;
-  text-align: justify; }
-  @media screen and (max-width: 1024px) {
-    .section-container {
-      font-size: 14px;
-      padding: 0 20px 10px 20px; } }
-  @media screen and (max-width: 768px) {
-    .section-container {
-      width: 100% !important;
-      margin-left: 0 !important;
-      position: static;
-      color: #fff; } }
+  text-align: justify;
+}
+@media screen and (max-width: 1024px) {
+  .section-container {
+    font-size: 14px;
+    padding: 0 20px 10px 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .section-container {
+    width: 100% !important;
+    margin-left: 0 !important;
+    position: static;
+    color: #fff;
+  }
+}
 
 #story-text-container {
   width: 30%;
@@ -352,15 +445,20 @@ body {
   border-image-slice: 1;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   background-color: rgba(158, 158, 158, 0.88);
-  transition: background-color 1s; }
-  @media screen and (min-width: 1025px) {
-    #story-text-container:hover {
-      background-color: #9e9e9e; } }
-  @media screen and (max-width: 1024px) {
-    #story-text-container {
-      top: 20px;
-      right: 2%;
-      width: 40%; } }
+  transition: background-color 1s;
+}
+@media screen and (min-width: 1025px) {
+  #story-text-container:hover {
+    background-color: #9e9e9e;
+  }
+}
+@media screen and (max-width: 1024px) {
+  #story-text-container {
+    top: 20px;
+    right: 2%;
+    width: 40%;
+  }
+}
 
 #rsvp-text-container {
   width: 500px;
@@ -375,10 +473,13 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   background-color: rgba(114, 130, 167, 0.89);
   transition: background-color 1s;
-  text-align: center; }
-  @media screen and (min-width: 1025px) {
-    #rsvp-text-container:hover {
-      background-color: #7282a7; } }
+  text-align: center;
+}
+@media screen and (min-width: 1025px) {
+  #rsvp-text-container:hover {
+    background-color: #7282a7;
+  }
+}
 
 #rsvp-form-wrapper {
   display: none;
@@ -392,7 +493,12 @@ body {
   right: 0;
   background-color: #fff;
   top: 25%;
-  border-radius: 10px; }
+  border-radius: 10px;
+}
+
+#rsvp-response-form, #rsvp-mad-lib-form {
+  display: none;
+}
 
 #engagement-text-container {
   width: 600px;
@@ -406,28 +512,39 @@ body {
   border-image-slice: 1;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   background-color: rgba(158, 158, 158, 0.8);
-  transition: background-color 1s; }
-  @media screen and (min-width: 1025px) {
-    #engagement-text-container:hover {
-      background-color: #9e9e9e; } }
-  @media screen and (max-width: 1024px) {
-    #engagement-text-container {
-      left: 50%;
-      margin-left: -300px; } }
+  transition: background-color 1s;
+}
+@media screen and (min-width: 1025px) {
+  #engagement-text-container:hover {
+    background-color: #9e9e9e;
+  }
+}
+@media screen and (max-width: 1024px) {
+  #engagement-text-container {
+    left: 50%;
+    margin-left: -300px;
+  }
+}
 
 #wedding {
   text-align: center;
   background-image: url("../images/1024/wedding.jpg");
   background-size: cover;
-  min-height: 900px; }
-  #wedding .picture-wrapper {
-    text-align: center; }
-  @media screen and (max-width: 1366px) {
-    #wedding {
-      min-height: 700px; } }
-  @media screen and (max-width: 1024px) {
-    #wedding {
-      min-height: 562px; } }
+  min-height: 900px;
+}
+#wedding .picture-wrapper {
+  text-align: center;
+}
+@media screen and (max-width: 1366px) {
+  #wedding {
+    min-height: 700px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  #wedding {
+    min-height: 562px;
+  }
+}
 
 #wedding-text-container {
   top: 10%;
@@ -443,82 +560,110 @@ body {
   z-index: 2;
   box-shadow: none;
   background-color: rgba(255, 255, 255, 0.6);
-  transition: background-color 1s; }
-  @media screen and (min-width: 1025px) {
-    #wedding-text-container:hover {
-      background-color: white; } }
-  @media screen and (max-width: 1024px) {
-    #wedding-text-container {
-      top: 5px;
-      background: none;
-      border: none; } }
-  @media screen and (max-width: 768px) {
-    #wedding-text-container {
-      position: static; } }
+  transition: background-color 1s;
+}
+@media screen and (min-width: 1025px) {
+  #wedding-text-container:hover {
+    background-color: white;
+  }
+}
+@media screen and (max-width: 1024px) {
+  #wedding-text-container {
+    top: 5px;
+    background: none;
+    border: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  #wedding-text-container {
+    position: static;
+  }
+}
 
 #wedding-section {
   display: flex;
-  display: -webkit-flex; }
-  #wedding-section div {
-    flex: 1;
-    -webkit-flex: 1; }
+  display: -webkit-flex;
+}
+#wedding-section div {
+  flex: 1;
+  -webkit-flex: 1;
+}
 
 #bridal-party {
   diplay: flex;
   display: -webkit-flex;
-  text-align: center; }
-  #bridal-party > div {
-    flex: 1;
-    -webkit-flex: 1;
-    padding: 20px 0 50px 0; }
-  @media screen and (max-width: 1024px) {
-    #bridal-party {
-      display: block; } }
+  text-align: center;
+}
+#bridal-party > div {
+  flex: 1;
+  -webkit-flex: 1;
+  padding: 20px 0 50px 0;
+}
+@media screen and (max-width: 1024px) {
+  #bridal-party {
+    display: block;
+  }
+}
 
 #bridesmaids {
-  background-color: rgba(114, 130, 167, 0.9); }
+  background-color: rgba(114, 130, 167, 0.9);
+}
 
 #groomsmen-women {
-  background-color: rgba(254, 182, 77, 0.9); }
+  background-color: rgba(254, 182, 77, 0.9);
+}
 
 #linh {
-  background-image: url("../images/bridesmaids/linh.png"); }
+  background-image: url("../images/bridesmaids/linh.png");
+}
 
 #erin {
-  background-image: url("../images/bridesmaids/erin.png"); }
+  background-image: url("../images/bridesmaids/erin.png");
+}
 
 #wennie {
-  background-image: url("../images/bridesmaids/wennie.png"); }
+  background-image: url("../images/bridesmaids/wennie.png");
+}
 
 #olivia {
-  background-image: url("../images/bridesmaids/olivia.png"); }
+  background-image: url("../images/bridesmaids/olivia.png");
+}
 
 #jenny {
-  background-image: url("../images/bridesmaids/jenny.png"); }
+  background-image: url("../images/bridesmaids/jenny.png");
+}
 
 #katie {
-  background-image: url("../images/bridesmaids/katie.png"); }
+  background-image: url("../images/bridesmaids/katie.png");
+}
 
 #nuri {
-  background-image: url("../images/bridesmaids/nuri.png"); }
+  background-image: url("../images/bridesmaids/nuri.png");
+}
 
 #winston {
-  background-image: url("../images/groomsmen/winston.png"); }
+  background-image: url("../images/groomsmen/winston.png");
+}
 
 #donna {
-  background-image: url("../images/groomsmen/donna.png"); }
+  background-image: url("../images/groomsmen/donna.png");
+}
 
 #aaron {
-  background-image: url("../images/groomsmen/aaron.png"); }
+  background-image: url("../images/groomsmen/aaron.png");
+}
 
 #charles {
-  background-image: url("../images/groomsmen/charles.png"); }
+  background-image: url("../images/groomsmen/charles.png");
+}
 
 #brian {
-  background-image: url("../images/groomsmen/brian.png"); }
+  background-image: url("../images/groomsmen/brian.png");
+}
 
 #ritchie {
-  background-image: url("../images/groomsmen/ritchie.png"); }
+  background-image: url("../images/groomsmen/ritchie.png");
+}
 
 .bridal-party-profile-list {
   display: flex;
@@ -526,38 +671,49 @@ body {
   flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
   justify-content: center;
-  -webkit-justify-content: center; }
+  -webkit-justify-content: center;
+}
+.bridal-party-profile-list > li {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  background-color: #fff;
+  margin: 10px;
+  background-size: cover;
+  border: 2px solid #fff;
+  top: 200px;
+  background-color: #9e9e9e;
+}
+@media screen and (max-width: 1024px) {
   .bridal-party-profile-list > li {
-    width: 200px;
-    height: 200px;
-    border-radius: 100px;
-    background-color: #fff;
-    margin: 10px;
-    background-size: cover;
-    border: 2px solid #fff;
-    top: 200px;
-    background-color: #9e9e9e; }
-    @media screen and (max-width: 1024px) {
-      .bridal-party-profile-list > li {
-        width: 125px;
-        height: 125px; } }
-    .bridal-party-profile-list > li.selected {
-      position: absolute; }
-    .bridal-party-profile-list > li:hover {
-      cursor: pointer;
-      opacity: .8; }
+    width: 125px;
+    height: 125px;
+  }
+}
+.bridal-party-profile-list > li.selected {
+  position: absolute;
+}
+.bridal-party-profile-list > li:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
 
 #bridal-party-description {
-  display: none; }
+  display: none;
+}
 
 .bridal-party-wrapper {
   font-size: 16px;
-  position: relative; }
+  position: relative;
+}
+.bridal-party-wrapper.selected {
+  padding: 215px 0 0 0;
+}
+@media screen and (max-width: 1024px) {
   .bridal-party-wrapper.selected {
-    padding: 215px 0 0 0; }
-    @media screen and (max-width: 1024px) {
-      .bridal-party-wrapper.selected {
-        padding: 135px 0 0 0; } }
+    padding: 135px 0 0 0;
+  }
+}
 
 .bridal-bio {
   text-align: justify;
@@ -572,12 +728,14 @@ body {
   border-image-slice: 1;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   background-color: rgba(158, 158, 158, 0.8);
-  margin: 10px auto; }
+  margin: 10px auto;
+}
 
 #directions {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 40px 0;
-  text-align: center; }
+  text-align: center;
+}
 
 #mobile-menu-icon {
   display: none;
@@ -588,46 +746,59 @@ body {
   height: 40px;
   border-radius: 5px;
   background-color: #7282a7;
-  z-index: 5; }
-  @media screen and (max-width: 768px) {
-    #mobile-menu-icon {
-      position: fixed;
-      display: block; } }
-  #mobile-menu-icon span {
-    width: 28px;
-    height: 4px;
-    background: #fff;
-    border-radius: 10px;
+  z-index: 5;
+}
+@media screen and (max-width: 768px) {
+  #mobile-menu-icon {
+    position: fixed;
     display: block;
-    position: absolute;
-    left: 6px;
-    opacity: 1;
-    transform: rotate(0deg);
-    transition: .25s ease-in-out; }
-    #mobile-menu-icon span:nth-child(1) {
-      top: 6px; }
-      #mobile-menu-icon span:nth-child(1).toggle-menu {
-        transform: rotate(45deg);
-        top: 17px; }
-    #mobile-menu-icon span:nth-child(2) {
-      top: 17px; }
-      #mobile-menu-icon span:nth-child(2).toggle-menu {
-        width: 0%;
-        opacity: 0; }
-    #mobile-menu-icon span:nth-child(3) {
-      top: 28px; }
-      #mobile-menu-icon span:nth-child(3).toggle-menu {
-        transform: rotate(45deg);
-        top: 17px; }
-  #mobile-menu-icon.toggle-menu span:nth-child(1) {
-    transform: rotate(45deg);
-    top: 17px; }
-  #mobile-menu-icon.toggle-menu span:nth-child(2) {
-    width: 0%;
-    opacity: 0; }
-  #mobile-menu-icon.toggle-menu span:nth-child(3) {
-    transform: rotate(-45deg);
-    top: 17px; }
+  }
+}
+#mobile-menu-icon span {
+  width: 28px;
+  height: 4px;
+  background: #fff;
+  border-radius: 10px;
+  display: block;
+  position: absolute;
+  left: 6px;
+  opacity: 1;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+#mobile-menu-icon span:nth-child(1) {
+  top: 6px;
+}
+#mobile-menu-icon span:nth-child(1).toggle-menu {
+  transform: rotate(45deg);
+  top: 17px;
+}
+#mobile-menu-icon span:nth-child(2) {
+  top: 17px;
+}
+#mobile-menu-icon span:nth-child(2).toggle-menu {
+  width: 0%;
+  opacity: 0;
+}
+#mobile-menu-icon span:nth-child(3) {
+  top: 28px;
+}
+#mobile-menu-icon span:nth-child(3).toggle-menu {
+  transform: rotate(45deg);
+  top: 17px;
+}
+#mobile-menu-icon.toggle-menu span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 17px;
+}
+#mobile-menu-icon.toggle-menu span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+#mobile-menu-icon.toggle-menu span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 17px;
+}
 
 #gallery-text-container {
   top: 10%;
@@ -643,14 +814,16 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   background-color: rgba(158, 158, 158, 0.88);
   transition: background-color 1s;
-  text-align: center; }
+  text-align: center;
+}
 
 #other-events {
   background: url("../images/other_events_background_left.png") top left repeat-y, url("../images/other_events_background_right.png") top right repeat-y;
   background-color: rgba(245, 245, 245, 0.7);
   background-repeat: repeat-y;
   min-height: 600px;
-  padding: 60px 0; }
+  padding: 60px 0;
+}
 
 #other-events-container {
   margin: 0 auto;
@@ -666,25 +839,32 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   background-color: rgba(124, 139, 172, 0.7);
   transition: background-color 1s;
-  text-align: center; }
-  #other-events-container .event {
-    margin: 0 0 20px 0; }
-    #other-events-container .event h4 {
-      color: #fff; }
-    #other-events-container .event p {
-      margin: 0 auto;
-      width: 75%; }
-    #other-events-container .event:after {
-      content: "";
-      display: block;
-      text-align: center;
-      width: 100%;
-      height: 98px;
-      background-size: 100% 100%;
-      background-image: url(../images/other_events_divider.png); }
-      @media screen and (max-width: 468px) {
-        #other-events-container .event:after {
-          height: 75px; } }
+  text-align: center;
+}
+#other-events-container .event {
+  margin: 0 0 20px 0;
+}
+#other-events-container .event h4 {
+  color: #fff;
+}
+#other-events-container .event p {
+  margin: 0 auto;
+  width: 75%;
+}
+#other-events-container .event:after {
+  content: "";
+  display: block;
+  text-align: center;
+  width: 100%;
+  height: 98px;
+  background-size: 100% 100%;
+  background-image: url(../images/other_events_divider.png);
+}
+@media screen and (max-width: 468px) {
+  #other-events-container .event:after {
+    height: 75px;
+  }
+}
 
 #registry-text-container {
   top: 100px;
@@ -692,13 +872,18 @@ body {
   left: calc(50% - 300px);
   box-shadow: none;
   background-color: rgba(255, 255, 255, 0.6);
-  transition: background-color 1s; }
-  @media screen and (min-width: 1025px) {
-    #registry-text-container:hover {
-      background-color: rgba(255, 255, 255, 0.8); } }
-  @media screen and (max-width: 1024px) {
-    #registry-text-container {
-      background: rgba(158, 158, 158, 0.88); } }
+  transition: background-color 1s;
+}
+@media screen and (min-width: 1025px) {
+  #registry-text-container:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+}
+@media screen and (max-width: 1024px) {
+  #registry-text-container {
+    background: rgba(158, 158, 158, 0.88);
+  }
+}
 
 footer {
   width: 80%;
@@ -706,9 +891,11 @@ footer {
   margin: auto;
   text-align: center;
   font-style: italic;
-  font-size: 12px; }
-  footer a {
-    display: block;
-    color: #666; }
+  font-size: 12px;
+}
+footer a {
+  display: block;
+  color: #666;
+}
 
 /*# sourceMappingURL=wedding.css.map */

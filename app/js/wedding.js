@@ -159,14 +159,83 @@
 		$('#rsvp-form-wrapper').show();
 	})
 	$('#rsvp-name').on('click', function(){
-		console.log($("#rsvp-form").serializeFormJSON());
+		var $rsvpNameForm=$("#rsvp-form");
 			$.ajax({
 				method: "POST",
 				url: "/rsvp",
-				data: $("#rsvp-form").serializeFormJSON()
+				data: $rsvpNameForm.serializeFormJSON(),
+				success:function(data, status, jqXhr){
+					if(data){
+						$rsvpNameForm.hide();
+						renderRSVP(data);
+					}
+				},
+				error:function(data, status, jqXhr){
+					console.error(jqXhr);
+
+				}
 			});
 		return false;
 	})
+	function renderRSVP(data){
+		var $rsvpResponse = $('#rsvp-response-form');
+		$rsvpResponse.show();
+		var html = '<span>Your information has been found! Please ensure the following information is correct: </span><input type="hidden" name="guestPartyId" value='+data.guestPartyId+'>',
+			guestList=data.guestList;
+		if(guestList){
+			html+="<ul>"
+			$.each(guestList,function(index, value){
+				html+="<li><label>Guest #"+(index+1)+"</label><input type='text' name='firstName' value='"+value.firstName+"'/><input type='text' name='lastName' value='"+value.lastName+"'/></li>"
+			})
+			html+="</ul>"
+		}
+		if(data.plusOne){
+			html+="<label>Will you be bringing a plus one?</label><input type='radio' name='plusOneResponse' value='true' checked>Yes</input><input type='radio' name='plusOneResponse' value='false'>No</input><div id='plus-one-section'>Name: <input type='text' name='plusOneFirst'/ placeholder='First Name'><input type='text' name='plusOneLast' placeholder='Last Name'/></div>";
+		}
+		html+="<input type='submit' value='Submit' id='rsvp-response-submit'/>";
+
+		$rsvpResponse.append(html);
+		$rsvpResponse.on('click','input[type="radio"][name="plusOneResponse"]',function(){
+			var $plusOneSection = $rsvpResponse.find('#plus-one-section');
+			this.value=="true"?$plusOneSection.show():$plusOneSection.hide();
+		});
+		$rsvpResponse.find('#rsvp-response-submit').on('click',function(){
+			var $rsvpMadlib = $('#rsvp-mad-lib-form');
+			$.ajax({
+				method: "POST",
+				url: "/rsvp/response",
+				data: $rsvpResponse.serializeFormJSON(),
+				success:function(data, status, jqXhr){
+					$rsvpResponse.hide();
+					$rsvpMadlib.show();
+					if(data){
+						renderMadLib(data);
+					}
+				},
+				error:function(data, status, jqXhr){
+					console.error(jqXhr);
+				}
+			});
+			return false;
+		})
+	}
+	function renderMadLib(data){
+		var $rsvpMadlib = $('#rsvp-mad-lib-form');
+		$('#rsvp-mad-lib-groupid').val(data.guestPartyId);
+		$rsvpMadlib.find('#rsvp-mad-lib-submit').on('click',function(){
+			$.ajax({
+				method: "POST",
+				url: "/rsvp/madlib",
+				data: $rsvpMadlib.serializeFormJSON(),
+				success:function(data, status, jqXhr){
+				},
+				error:function(data, status, jqXhr){
+					console.error(jqXhr);
+				}
+			});
+			return false;
+		});
+	}
 
 })(window, document, $);
 

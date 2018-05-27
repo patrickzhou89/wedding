@@ -425,6 +425,9 @@ body{
     top: 25%;   
     border-radius: 10px;
 }
+#rsvp-response-form, #rsvp-mad-lib-form{
+    display:none;
+}
 #engagement-text-container{
     width: 600px;
     bottom: 200px;
