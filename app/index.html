@@ -21,23 +21,28 @@
 				<img id='gallery-image' src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=">/>
 			</div>
 			<div id='rsvp-form-wrapper'>
-				<form id='rsvp-form'>
-					<p>Please enter your first and last name to search for your RSVP:</p>
-					<label for='firstName'>First Name:<input type='text' name='firstName' id='firstName' /></label>
-					<label for='lastName'>Last Name: <input type='text' name='lastName' id='lastName'/></label>
-					<input id='rsvp-name' type='submit'>
-				</form>
-				<form id='rsvp-response-form'>
-				</form>
-				<form id='rsvp-mad-lib-form'>
-					<input type="hidden" id='rsvp-mad-lib-groupid' />
-					<p>Thank you for your response!</p>
-					<p>Please help us fill out this mad lib for the wedding!</p>
-					<p>
-						We are so <input type='text' name='madLib1' placeholder="Adjective" /> to be invited to your wedding.  When we got the invitation we exclaimed  <input type='text' name='madLib2'/>!  We are so excited for  <input type='text' name='madLib3'/>. We hope the DJ plays  <input type='text' name='madLibSong' placeholder="Song" /> by  <input type='text' name='madLibArtist' placeholder="Artist" />.  You two are the most  <input type='text' name='madLib4' placeholder="Adjective" /> <input type='text' name='madLib5' placeholder="Noun" /> and we wish you  <input type='text' name='madLib6'/>. 
-					</p>
-					<input id='rsvp-mad-lib-submit' type='submit'>
-				</form>
+				<div id='rsvp-content'>
+					<img id='rsvp-heart-img' src="../styles/images/hearts.png" alt='rsvp_hearts'/>
+					<div id='rsvp-text-content'>
+						<form id='rsvp-form'>
+							<p class='rsvp-title-text'>Enter Name To RSVP:</p>
+							<input type='text' name='firstName' id='firstName' placeholder="First Name" />
+							<input type='text' name='lastName' id='lastName' placeholder="Last Name" />
+							<input id='rsvp-name' type='submit' value="Search">
+						</form>
+						<form id='rsvp-response-form'>
+						</form>
+						<form id='rsvp-mad-lib-form'>
+							<input type="hidden" id='rsvp-mad-lib-groupid' />
+							<p>Thank you for your response!</p>
+							<p>Please help us fill out this mad lib for the wedding!</p>
+							<p>
+								We are so <input type='text' name='madLib1' placeholder="Adjective" /> to be invited to your wedding.  When we got the invitation we exclaimed  <input type='text' name='madLib2'/>!  We are so excited for  <input type='text' name='madLib3'/>. We hope the DJ plays  <input type='text' name='madLibSong' placeholder="Song" /> by  <input type='text' name='madLibArtist' placeholder="Artist" />.  You two are the most  <input type='text' name='madLib4' placeholder="Adjective" /> <input type='text' name='madLib5' placeholder="Noun" /> and we wish you  <input type='text' name='madLib6'/>. 
+							</p>
+							<input id='rsvp-mad-lib-submit' type='submit'>
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div id='mobile-menu-icon'>

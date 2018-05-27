@@ -3,7 +3,7 @@ $standard_res:1366px;
 $tablet_horizontal:1024px;
 $tablet:768px;
 html{
-	font-family:'Myriad Pro','Helvetica','sans-serif';
+	font-family:aleo,'Helvetica','sans-serif';
 	font-size:16px;
     @media screen and (max-width:$standard_res){
         font-size:14px;
@@ -78,6 +78,15 @@ p{
 @font-face {
     font-family: sverigedecorated;
     src: url("../fonts/SverigeScriptDecorated_Demo.ttf");
+}
+@font-face {
+    font-family: greatvibes;
+    src: url("../fonts/greatvibes.woff");
+}
+
+@font-face {
+    font-family: aleo;
+    src: url("../fonts/aleo.woff");
 }
 .align-center{
     text-align:center;
@@ -271,7 +280,7 @@ body{
         top: 0;
         left: 0;
         z-index: 5;
-        padding: 10px 0 0 10px;
+        padding: 5px 0;
     }
     @media screen and (min-width:769px){
         display:inline-flex !important;
@@ -415,18 +424,55 @@ body{
     display:none;
     margin: auto;
     position: absolute;
-    min-height: 400px;
-    width: 40%;
-    min-width: 700px;
+    min-height: 600px;
+    width: 34%;
+    min-width: 500px;
     text-align: center;
     left: 0;
     right: 0;
     background-color: #fff;
-    top: 25%;   
-    border-radius: 10px;
+    top: 10%;
+    height: 80%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+#rsvp-content{
+    margin:13px;
+    border-width: 12px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, #c4c7ce 15%, #BDBDBD 20%, #E0E0E0 ,#BDBDBD 10%,#c4c7ce);
+    border-image-slice: 1;
+    padding:0 10%;
+    height: calc(100% - 26px);
+
+}
+#rsvp-heart-img{
+    margin: 15px 0;
+}
+#rsvp-text-content{
+    font-size:22px;
+    display: flex;
+    text-align:left;
+    > form > * {
+        margin: 8px 0;
+    }
+    input[type="text"]{
+        width: 100%;
+        border-radius: 10px;
+        padding: 10px 5px;
+        border: 2px solid #c2c4c9;
+        background-color: #fff;
+        color: black;
+    }
 }
 #rsvp-response-form, #rsvp-mad-lib-form{
     display:none;
+}
+.rsvp-guest-list{
+    font-family:greatvibes;
+    font-size:32px;
+}
+.rsvp-guest-list-names{
+    margin:10px 0;
 }
 #engagement-text-container{
     width: 600px;

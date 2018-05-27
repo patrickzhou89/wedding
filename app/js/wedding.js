@@ -183,23 +183,23 @@
 		var html = '<span>Your information has been found! Please ensure the following information is correct: </span><input type="hidden" name="guestPartyId" value='+data.guestPartyId+'>',
 			guestList=data.guestList;
 		if(guestList){
-			html+="<ul>"
+			html+="<ul class='rsvp-guest-list'>"
 			$.each(guestList,function(index, value){
-				html+="<li><label>Guest #"+(index+1)+"</label><input type='text' name='firstName' value='"+value.firstName+"'/><input type='text' name='lastName' value='"+value.lastName+"'/></li>"
+				html+="<li class='rsvp-guest-list-names'>"+value.firstName+"&nbsp&nbsp&nbsp"+value.lastName+"</li>"
 			})
 			html+="</ul>"
 		}
 		if(data.plusOne){
-			html+="<label>Will you be bringing a plus one?</label><input type='radio' name='plusOneResponse' value='true' checked>Yes</input><input type='radio' name='plusOneResponse' value='false'>No</input><div id='plus-one-section'>Name: <input type='text' name='plusOneFirst'/ placeholder='First Name'><input type='text' name='plusOneLast' placeholder='Last Name'/></div>";
+			html+="<span>Bringing +1?</span><input type='radio' name='plusOneResponse' value='true' checked>Yes</input><input type='radio' name='plusOneResponse' value='false'>No</input><div id='plus-one-section'><input type='text' name='plusOneFirst'/ placeholder='First Name'><input type='text' name='plusOneLast' placeholder='Last Name'/></div>";
 		}
-		html+="<input type='submit' value='Submit' id='rsvp-response-submit'/>";
+		html+="<input type='submit' value='Confirm' id='rsvp-response-confirm'/>";
 
 		$rsvpResponse.append(html);
 		$rsvpResponse.on('click','input[type="radio"][name="plusOneResponse"]',function(){
 			var $plusOneSection = $rsvpResponse.find('#plus-one-section');
 			this.value=="true"?$plusOneSection.show():$plusOneSection.hide();
 		});
-		$rsvpResponse.find('#rsvp-response-submit').on('click',function(){
+		$rsvpResponse.find('#rsvp-response-confirm').on('click',function(){
 			var $rsvpMadlib = $('#rsvp-mad-lib-form');
 			$.ajax({
 				method: "POST",
