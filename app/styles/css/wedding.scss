@@ -34,10 +34,16 @@ h3{
     font-family: mademoisellecamille;
 }
 h4{
-   font-size: 16px;
+   font-size: 22px;
     margin: 8px;
-    font-weight: 600;
     color: #212121;
+    text-transform: uppercase;
+    font-style: normal;
+    text-align:center;
+}
+h5{
+    font-size: 16px;
+    margin: 8px;
     text-transform: uppercase;
     font-style: normal;
     text-align:center;
@@ -759,7 +765,7 @@ body{
     padding:60px 0;
 }
 #other-events-container{
-    margin:0 auto;
+    margin:0px auto;
     position:static;
     padding:15px;
     width:800px;
@@ -772,14 +778,13 @@ body{
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     background-color: rgba(124, 139, 172, .7);
     transition: background-color 1s;
-    text-align:center;
     .event{
         h4{
             color:#fff;
         }
         margin:0 0 20px 0;
         p{
-            margin:0 auto;
+            margin:8px auto;
             width:75%;
         }
         &:after{
