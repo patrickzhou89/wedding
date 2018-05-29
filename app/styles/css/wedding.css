@@ -74,15 +74,19 @@ p {
 @font-face {
   font-family: mademoisellecamille;
   src: url("../fonts/Mademoiselle Camille L.ttf"); }
+
 @font-face {
   font-family: sverigedecorated;
   src: url("../fonts/SverigeScriptDecorated_Demo.ttf"); }
+
 @font-face {
   font-family: greatvibes;
   src: url("../fonts/greatvibes.woff"); }
+
 @font-face {
   font-family: aleo;
   src: url("../fonts/aleo.woff"); }
+
 .align-center {
   text-align: center; }
 
@@ -415,7 +419,12 @@ body {
   border-image: linear-gradient(to bottom, #c4c7ce 15%, #BDBDBD 20%, #E0E0E0, #BDBDBD 10%, #c4c7ce);
   border-image-slice: 1;
   padding: 0 10%;
-  height: calc(100% - 26px); }
+  height: calc(100% - 26px);
+  overflow-y: auto; }
+
+.rsvp-error {
+  display: none;
+  color: #f44336; }
 
 #rsvp-heart-img {
   margin: 15px 0; }
@@ -424,8 +433,10 @@ body {
   font-size: 18px;
   display: flex;
   text-align: center; }
+  #rsvp-text-content > form {
+    width: 100%; }
   #rsvp-text-content > form > * {
-    margin: 8px 0; }
+    margin: 10px 0; }
   #rsvp-text-content .rsvp-input {
     width: 100%;
     border-radius: 5px;
@@ -441,10 +452,18 @@ body {
       font-family: aleo;
       font-size: 16px; }
   #rsvp-text-content .rsvp-radio-button-wrapper {
-    font-size: 12px; }
+    font-size: 14px;
+    display: flex; }
+    #rsvp-text-content .rsvp-radio-button-wrapper span {
+      flex: 1;
+      margin: 5px 0; }
 
 #rsvp-response-form, #rsvp-mad-lib-form {
   display: none; }
+
+#rsvp-thank-you-wrapper {
+  display: none;
+  width: 100%; }
 
 .rsvp-guest-list {
   font-family: greatvibes;
@@ -781,5 +800,3 @@ footer {
   footer a {
     display: block;
     color: #666; }
-
-/*# sourceMappingURL=wedding.css.map */

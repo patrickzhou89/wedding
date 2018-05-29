@@ -60,7 +60,7 @@
 	function closeModal(){
 		$('#modal').hide();
 		$('#picture-gallery').hide();
-		$('#rsvp-form').hide();
+		$('#rsvp-form-wrapper').hide();
 		$('body').removeClass('noscroll');
 		$('#navigator > ul').empty();
 	}
@@ -158,7 +158,10 @@
 		openModalBase();
 		$('#rsvp-form-wrapper').show();
 	})
-	$('#rsvp-name').on('click', function(){
+	$('#rsvp-form').on('submit', function(e){
+		e.preventDefault();
+		var $this=$(this);
+		var $rsvpError=$('.rsvp-error');
 		var $rsvpNameForm=$("#rsvp-form");
 			$.ajax({
 				method: "POST",
@@ -166,86 +169,107 @@
 				data: $rsvpNameForm.serializeFormJSON(),
 				success:function(data, status, jqXhr){
 					if(data){
-						$rsvpNameForm.hide();
+						$this.hide();
+						$rsvpError.hide();
 						renderRSVP(data);
 					}
 				},
 				error:function(data, status, jqXhr){
-					console.error(jqXhr);
-
+					$rsvpError.hide();
+					if(data.status==404){
+						$('#rsvp-not-found').show();
+					}else if(data.status==400){
+						$('#rsvp-bad-request').show();
+					}
 				}
 			});
-		return false;
+		//return false;
 	})
 	function renderRSVP(data){
-		var $rsvpResponse = $('#rsvp-response-form');
-		$rsvpResponse.show();
-		var html = '<p class="align-center">Your reservation was found!</p><input type="hidden" name="guestPartyId" value='+data.guestPartyId+'>',
+		var $rsvpResponse = $('#rsvp-response-form'),
 			guestList=data.guestList;
+		$rsvpResponse.show();
+		var $rsvpError=$('.rsvp-error');
+		var html="";
 		if(guestList){
-			html+="<ul class='rsvp-guest-list'>"
+			
 			$.each(guestList,function(index, value){
 				html+="<li class='rsvp-guest-list-names'>"+value.firstName+"&nbsp&nbsp&nbsp"+value.lastName+"</li>"
 			})
-			html+="</ul>"
+			$('.rsvp-guest-list').html(html);
+			$('#guest-party-id').val(data.guestPartyId)
 		}
-		html+="<div>Will you be attending the wedding?</div><div class='rsvp-radio-button-wrapper'><input type='radio' name='attending' value='true' checked>Yes! I/We will be attending</input><input type='radio' name='attending' value='false'>Sorry, we respectfully decline</input></div>";
 		if(data.plusOne){
-			html+="<div>Bringing +1?</div><div class='rsvp-radio-button-wrapper'><input type='radio' name='plusOneResponse' value='true' checked>Yes</input><input type='radio' name='plusOneResponse' value='false'>No</input></div><div id='plus-one-section'><input type='text' class='rsvp-input' name='plusOneName'/ placeholder='Name'></div>";
+			var plusOneSection="<div><p>Will you be bringing a +1?</p><p class='rsvp-error' id='rsvp-validation'>Please fill out +1 name.</p><div class='rsvp-radio-button-wrapper'><span><input type='radio' name='plusOneResponse' value='true' required checked/>Yes</span><span><input type='radio' name='plusOneResponse' value='false'/>No</span></div><div id='plus-one-section'><input type='text' class='rsvp-input' id='plus-one-name' name='plusOneName' placeholder='Name'></div></div>";
+			$('#rsvp-response-form-questions').last().append(plusOneSection);
 		}
-		html+="<div>Will you be attending mass on 9/1/2018?</div><div class='rsvp-radio-button-wrapper'><input type='radio' name='massAttending' value='true' checked>Yes</input><input type='radio' name='massAttending' value='false'>No</input></div>";
-		html+="<div>Will you be attending the gathering on 9/3/2018?</div><div class='rsvp-radio-button-wrapper'><input type='radio' name='gatheringAttending' value='true' checked>Yes</input><input type='radio' name='gatheringAttending' value='false'>No</input></div>";
-		html+="<input type='submit' value='Confirm' id='rsvp-response-confirm'/>";
-
-		$rsvpResponse.append(html);
-		$rsvpResponse.on('click','input[type="radio"][name="attending"]',function(){
-			//this.value=="true"?
-		});
 		$rsvpResponse.on('click','input[type="radio"][name="plusOneResponse"]',function(){
 			var $plusOneSection = $rsvpResponse.find('#plus-one-section');
-			this.value=="true"?$plusOneSection.show():$plusOneSection.hide();
+			if(this.value=="true"){
+				$plusOneSection.show();
+			}else{
+				$plusOneSection.hide(); 
+				$rsvpResponse.find('#plus-one-name').val('');
+			}
 		});
-		function nextQuestion(element){
-			$(element).hide();
-		}
-		$rsvpResponse.find('#rsvp-response-confirm').on('click',function(){
-			var $rsvpMadlib = $('#rsvp-mad-lib-form');
-			$.ajax({
-				method: "POST",
-				url: "/rsvp/response",
-				data: $rsvpResponse.serializeFormJSON(),
-				success:function(data, status, jqXhr){
-					$rsvpResponse.hide();
-					$rsvpMadlib.show();
-					if(data){
-						renderMadLib(data);
+		$rsvpResponse.on('submit',function(e){
+			$rsvpResponse.find('.rsvp-error').hide();
+			data = $rsvpResponse.serializeFormJSON();
+			if(data.plusOneResponse=='true' && !data.plusOneName){
+				$rsvpResponse.find('#rsvp-validation').show();
+			}else{
+				$.ajax({
+					method: "POST",
+					url: "/rsvp/response",
+					data: data,
+					success:function(data, status, jqXhr){
+						$rsvpResponse.hide();
+						if(data){
+							$rsvpResponse.hide();
+							if(data.attending=='true'){
+								renderMadLib(data);
+							}else{
+								renderThankYou();
+							}
+						}
+					},
+					error:function(data, status, jqXhr){
+						console.error(jqXhr);
 					}
-				},
-				error:function(data, status, jqXhr){
-					console.error(jqXhr);
-				}
-			});
-			return false;
+				});
+			}
+			e.preventDefault();
 		})
 	}
 	function renderMadLib(data){
 		var $rsvpMadlib = $('#rsvp-mad-lib-form');
+		$rsvpMadlib.show();
 		$('#rsvp-mad-lib-groupid').val(data.guestPartyId);
-		$rsvpMadlib.find('#rsvp-mad-lib-submit').on('click',function(){
+		$rsvpMadlib.on('submit',function(e){
 			$.ajax({
 				method: "POST",
 				url: "/rsvp/madlib",
 				data: $rsvpMadlib.serializeFormJSON(),
 				success:function(data, status, jqXhr){
+					$rsvpMadlib.hide();
+					renderThankYou(true);
 				},
 				error:function(data, status, jqXhr){
 					console.error(jqXhr);
 				}
 			});
-			return false;
+			e.preventDefault();
 		});
 	}
-
+	function renderThankYou(attending){
+		var $rsvpThankYou = $('#rsvp-thank-you-wrapper');
+		$rsvpThankYou.show();
+		var html = 'Thank you for response!';
+		if(attending){
+			html+=' We look forward to seeing you!';
+		}
+		$('#rsvp-thank-you').html(html);
+	}
 })(window, document, $);
 
 function debounce(func, wait, immediate) {

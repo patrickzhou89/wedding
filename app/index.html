@@ -26,21 +26,55 @@
 					<div id='rsvp-text-content'>
 						<form id='rsvp-form'>
 							<p class='rsvp-title-text'>Enter Name To RSVP:</p>
-							<input type='text' class='rsvp-input' name='firstName' id='firstName' placeholder="First Name" />
-							<input type='text' class='rsvp-input' name='lastName' id='lastName' placeholder="Last Name" />
+							<p class='rsvp-error' id='rsvp-not-found'>Sorry, we couldn't find your reservation.</p>
+							<p class='rsvp-error' id='rsvp-bad-request'>Sorry, something went wrong. Please try again.</p>
+							<input type='text' class='rsvp-input' name='firstName' id='firstName' placeholder="First Name" required/>
+							<input type='text' class='rsvp-input' name='lastName' id='lastName' placeholder="Last Name" required/>
 							<input id='rsvp-name' type='submit' value="Search">
 						</form>
 						<form id='rsvp-response-form'>
+							<p class="align-center">Your reservation was found!</p>
+							<p class='rsvp-error' id='rsvp-bad-request'>Sorry, something went wrong. Please try again.</p>
+							<input type="hidden" name="guestPartyId" id='guest-party-id' />
+							<ul class='rsvp-guest-list'>
+							</ul>
+							<div id='rsvp-response-form-questions'>
+								<div>
+									<p>Will you be attending the wedding?</p>
+									<div class='rsvp-radio-button-wrapper'>
+										<span><input type='radio' name='attending' value='true' checked/>Yes! I/We will be attending</span>
+										<span><input type='radio' name='attending' value='false' required/>Sorry, we respectfully decline</span>
+									</div>
+								</div>
+								<div>
+									<p>Will you be attending mass on 9/1/2018?</p>
+									<div class='rsvp-radio-button-wrapper'>
+										<span><input type='radio' name='massAttending' value='true' checked required/>Yes</span>
+										<span><input type='radio' name='massAttending' value='false'/>No</span>
+									</div>
+								</div>
+								<div>
+									<p>Will you be attending the gathering on 9/3/2018?</p>
+									<div class='rsvp-radio-button-wrapper'>
+										<span><input type='radio' name='gatheringAttending' value='true' checked required/>Yes</span>
+										<span><input type='radio' name='gatheringAttending' value='false'/>No</span>
+									</div>
+								</div>
+							</div>
+							<input type='submit' value='Confirm' id='rsvp-response-confirm'/>
 						</form>
 						<form id='rsvp-mad-lib-form'>
-							<input type="hidden" id='rsvp-mad-lib-groupid' />
-							<p>Thank you for your response!</p>
+							<input type="hidden" id='rsvp-mad-lib-groupid' name='guestPartyId' />
+							<p>Thank your for your response! </p>
 							<p>Please help us fill out this mad lib for the wedding!</p>
 							<p id='rsvp-mad-lib'>
-								We are so <input type='text' class='rsvp-mad-lib-input' name='madLib1' placeholder="Adjective" /> to be invited to your wedding.  When we got the invitation we exclaimed  <input type='text' class='rsvp-mad-lib-input' name='madLib2'/>!  We are so excited for  <input type='text' class='rsvp-mad-lib-input' name='madLib3'/>. We hope the DJ plays  <input type='text' class='rsvp-mad-lib-input' name='madLibSong' placeholder="Song" /> by  <input type='text' class='rsvp-mad-lib-input' name='madLibArtist' placeholder="Artist" />.  You two are the most  <input type='text' class='rsvp-mad-lib-input' name='madLib4' placeholder="Adjective" /> <input type='text' class='rsvp-mad-lib-input' name='madLib5' placeholder="Noun" /> and we wish you  <input type='text' class='rsvp-mad-lib-input' name='madLib6'/>. 
+								We are so <input type='text' class='rsvp-mad-lib-input' name='madLib1' placeholder="Adjective" required/> to be invited to your wedding.  When we got the invitation we exclaimed  <input type='text' class='rsvp-mad-lib-input' name='madLib2' required/>!  We are so excited for  <input type='text' class='rsvp-mad-lib-input' name='madLib3' required/>. We hope the DJ plays  <input type='text' class='rsvp-mad-lib-input' name='madLibSong' placeholder="Song" required/> by  <input type='text' class='rsvp-mad-lib-input' name='madLibArtist' placeholder="Artist" required/>.  You two are the most  <input type='text' class='rsvp-mad-lib-input' name='madLib4' placeholder="Adjective" required/> <input type='text' class='rsvp-mad-lib-input' name='madLib5' placeholder="Noun" required/> and we wish you  <input type='text' class='rsvp-mad-lib-input' name='madLib6' required/>. 
 							</p>
 							<input id='rsvp-mad-lib-submit' type='submit'>
 						</form>
+						<div id='rsvp-thank-you-wrapper'>
+							<p id='rsvp-thank-you'></p>
+						</div>
 					</div>
 				</div>
 			</div>

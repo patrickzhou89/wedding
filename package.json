@@ -21,7 +21,8 @@
     "run-sequence": "^2.2.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node server.js dev",
+    "start" : "node server.js production"
   },
   "repository": {
     "type": "git",

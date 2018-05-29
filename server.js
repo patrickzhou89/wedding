@@ -2,7 +2,22 @@ const express = require('express')
 const bodyParser = require('body-parser');
 const app = express();
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/wedding_dev',function (err) {
+var db, hostFolder;
+console.log(process.argv)
+if(process.argv){
+	let environment=process.argv[2];
+	console.log(environment);
+	if(environment=="dev"){
+		db='wedding_dev';
+		hostFolder="app";
+	}
+	else if(environment=="production"){
+		db='wedding';
+		hostFolder="dist";
+	}
+}
+	console.log(db, hostFolder);
+mongoose.connect('mongodb://localhost/'+db,function (err) {
    if (err) throw err;
    console.log('Successfully connected to DB');
 });
@@ -22,6 +37,7 @@ var guestResponse = new Schema({
 	attending: Boolean,
 	massAttending: Boolean,
 	gatheringAttending: Boolean,
+	plusOneResponse: Boolean,
 	plusOneName: String
 })
 var guestResponseModel=mongoose.model('guestResponse', guestResponse,'guestResponse');
@@ -40,7 +56,8 @@ var guestMadLibResponse = new Schema({
 var guestMadLibResponseModel=mongoose.model('guestMadLibResponse', guestMadLibResponse,'guestMadLibResponse');
 
 app.use(bodyParser.urlencoded({extended: true}));
-app.get('/',(req, res) => res.sendFile('index.html',{root:__dirname+"/app"}));
+app.use(express.static(hostFolder));
+app.get('/',(req, res) => res.sendFile('index.html',{root:__dirname+"/"+hostFolder}));
 
 //GET /rsvp
 //returns 404s
@@ -49,7 +66,7 @@ app.post('/rsvp',(req,res)=> {
 		firstName=rsvpNameSearch.firstName,
 		lastName=rsvpNameSearch.lastName;
 	if(firstName && lastName){
-		guestReservationModel.findOne({'guestList.firstName':firstName,'guestList.lastName':lastName}).exec(function(err, docs){
+		guestReservationModel.findOne({'guestList.firstName':{'$regex':firstName,$options:'i'},'guestList.lastName':{'$regex':lastName,$options:'i'}}).exec(function(err, docs){
 			console.log(docs);
 			if (err){
 				res.sendStatus(400);
@@ -58,7 +75,7 @@ app.post('/rsvp',(req,res)=> {
 					res.sendStatus(404);
 				}else{
 					docs.guestPartyId=docs._id;
-					delete docs._id;
+					docs._id=undefined;
 					console.log(docs)
 					res.json(docs);
 				}
@@ -71,23 +88,32 @@ app.post('/rsvp',(req,res)=> {
 app.post('/rsvp/response', (req, res)=>{
 	let rsvpResponse = req.body;
 	if(rsvpResponse){
-		var response = new guestResponseModel(req.body).find({'guestPartyId':rsvpResponse.guestPartyId});
-		response.save();
-		res.json({
-			'guestPartyId':response.guestPartyId
+		guestResponseModel.findOneAndUpdate({'guestPartyId':rsvpResponse.guestPartyId},rsvpResponse,{upsert:true, new:true, runValidators:true}).exec(function(err, docs){
+			if(err){
+				console.log(err);
+				res.sendStatus(400)
+			}else{
+				res.json({
+					'guestPartyId':rsvpResponse.guestPartyId,
+					'attending':rsvpResponse.attending
+				})
+			}
 		});
-	
 	}
 });
 	
 app.post('/rsvp/madlib', (req, res)=>{
 	let rsvpResponse = req.body;
 	if(rsvpResponse){
-		var response = new guestMadLibResponseModel(req.body);
-		response.save();
-		res.sendStatus(204);
+		guestMadLibResponseModel.findOneAndUpdate({'guestPartyId':rsvpResponse.guestPartyId},rsvpResponse,{upsert:true, new:true, runValidators:true}).exec(function(err, docs){
+			if(err){
+				console.log(err);
+				res.sendStatus(400)
+			}else{
+				res.sendStatus(204);
+			}
+		});
 	}
 });
 
-app.use(express.static('app'));
 app.listen(3000, () => console.log('Listening on port 3000'));
