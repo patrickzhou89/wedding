@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="styles/css/wedding.mn.css?t=1527188769069">
+		<link rel="stylesheet" href="styles/css/wedding.min.css?t=1527456126749">
 		<link rel="icon" href="images/favicon.png" type="image/png">
  		<title>Hannah Tajo and Patrick's Wedding</title>
 	</head>
@@ -16,6 +16,30 @@
 					</ul>
 				</div>
 				<img id='gallery-image' src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=">/>
+			</div>
+			<div id='rsvp-form-wrapper'>
+				<div id='rsvp-content'>
+					<img id='rsvp-heart-img' src="../styles/images/hearts.png" alt='rsvp_hearts'/>
+					<div id='rsvp-text-content'>
+						<form id='rsvp-form'>
+							<p class='rsvp-title-text'>Enter Name To RSVP:</p>
+							<input type='text' name='firstName' id='firstName' placeholder="First Name" />
+							<input type='text' name='lastName' id='lastName' placeholder="Last Name" />
+							<input id='rsvp-name' type='submit' value="Search">
+						</form>
+						<form id='rsvp-response-form'>
+						</form>
+						<form id='rsvp-mad-lib-form'>
+							<input type="hidden" id='rsvp-mad-lib-groupid' />
+							<p>Thank you for your response!</p>
+							<p>Please help us fill out this mad lib for the wedding!</p>
+							<p>
+								We are so <input type='text' name='madLib1' placeholder="Adjective" /> to be invited to your wedding.  When we got the invitation we exclaimed  <input type='text' name='madLib2'/>!  We are so excited for  <input type='text' name='madLib3'/>. We hope the DJ plays  <input type='text' name='madLibSong' placeholder="Song" /> by  <input type='text' name='madLibArtist' placeholder="Artist" />.  You two are the most  <input type='text' name='madLib4' placeholder="Adjective" /> <input type='text' name='madLib5' placeholder="Noun" /> and we wish you  <input type='text' name='madLib6'/>. 
+							</p>
+							<input id='rsvp-mad-lib-submit' type='submit'>
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div id='mobile-menu-icon'>
@@ -224,16 +248,26 @@
 						<div>
 							<span class='section-title'>Other Events</span>
 							<div class='event'>
-								<h4>Saturday 09.01.18</h4>
-								<p>Mass at 5 PM with a blessing from one of Hannah's oldest friends Reverend Andrew Haissig after church.  Afterwards, we be hanging out in Market Square to take pictures (weather permitting).
-								</p>
+								<h4>Mass and Marriage Blessing</h4>
+								<h5>Saturday 09.01.18 - 5:00 PM</h5>
+								<h5>
+									<a class='link' href='https://stmaryoldtown.org/' target="_">The Basilica of Saint Mary</a>
+								</h5>
+								<h5>
+									310 S Royal St, Alexandria, VA 22314
+								</h5>
+								</br>
 								<p>
-									<a class='link' href='https://stmaryoldtown.org/' target="_">https://stmaryoldtown.org/</a>
+									Join us for Catholic mass at 5 PM with a blessing from one of Hannah's oldest friends Reverend Andrew Haissig after church. Afterwards, we will be taking formal pictures.<br/>
+									We will then head over to Murphy's Irish Pub in Alexandria, VA.  Join us for a drink!&nbsp;&nbsp;<span class='italic'>(this is a non-hosted event)</span>
 								</p>
 							</div>
 							<div class='event'>
-								<h4>Saturday 09.03.18</h4>
-								<p>Appetizers and Games at <a class='link' href='https://goo.gl/maps/YDyauXXv6VM2' target='_'>3000 Spout Run Parkway</a>. If you're still in town and can't get enough of us, Hannah and Patrick will be hosting a casual gathering at the club room of Cardinal House Condominiums
+								<h4>Appetizers and Games</h4>
+								<h5>Saturday 09.03.18</h5>
+								<h5><a class='link' href='https://goo.gl/maps/YDyauXXv6VM2' target='_'>3000 Spout Run Parkway</a></h5>
+								<p>
+								 	If you're still in town and can't get enough of us, Hannah and Patrick will be hosting a casual gathering with light appetizers and drinks at the club room of Cardinal House Condominiums. There will be games, pool, and karaoke.
 								</p>
 							</div>
 						</div>
@@ -251,8 +285,7 @@
 					<div class='section-container' id='rsvp-text-container'>
 						<div>
 							<span class='section-title'>RSVP</span>
-							<p>Coming Soon!</p>
-							<!--<div class='align-center'><button>Click to RSVP</button></div> -->
+							<div>RSVP opens 5.29.18!</div>
 						</div>
 					</div>
 					<img class='section-image' src='./styles/images/1024/rsvp.jpg' />
@@ -264,6 +297,6 @@
 			<a href="https://www.freepik.com/free-photo/pink-rose-and-petals-over-light-pink-background-with-space-in-the-middle_1371177.htm">Images courtesy of Freepik</a>
 		</footer>
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-		<script src="js/wedding.min.js?t=1527188769069"></script>
+		<script src="js/wedding.min.js?t=1527456126749"></script>
 	</body>
 </html>

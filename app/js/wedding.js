@@ -154,7 +154,7 @@
 	})
 
 	//RSVP
-	$('#rsvp').on('click', function(){
+	$('#rsvp-button').on('click', function(){
 		openModalBase();
 		$('#rsvp-form-wrapper').show();
 	})
@@ -180,7 +180,7 @@
 	function renderRSVP(data){
 		var $rsvpResponse = $('#rsvp-response-form');
 		$rsvpResponse.show();
-		var html = '<span>Your information has been found! Please ensure the following information is correct: </span><input type="hidden" name="guestPartyId" value='+data.guestPartyId+'>',
+		var html = '<p class="align-center">Your reservation was found!</p><input type="hidden" name="guestPartyId" value='+data.guestPartyId+'>',
 			guestList=data.guestList;
 		if(guestList){
 			html+="<ul class='rsvp-guest-list'>"
@@ -189,16 +189,25 @@
 			})
 			html+="</ul>"
 		}
+		html+="<div>Will you be attending the wedding?</div><div class='rsvp-radio-button-wrapper'><input type='radio' name='attending' value='true' checked>Yes! I/We will be attending</input><input type='radio' name='attending' value='false'>Sorry, we respectfully decline</input></div>";
 		if(data.plusOne){
-			html+="<span>Bringing +1?</span><input type='radio' name='plusOneResponse' value='true' checked>Yes</input><input type='radio' name='plusOneResponse' value='false'>No</input><div id='plus-one-section'><input type='text' name='plusOneFirst'/ placeholder='First Name'><input type='text' name='plusOneLast' placeholder='Last Name'/></div>";
+			html+="<div>Bringing +1?</div><div class='rsvp-radio-button-wrapper'><input type='radio' name='plusOneResponse' value='true' checked>Yes</input><input type='radio' name='plusOneResponse' value='false'>No</input></div><div id='plus-one-section'><input type='text' class='rsvp-input' name='plusOneName'/ placeholder='Name'></div>";
 		}
+		html+="<div>Will you be attending mass on 9/1/2018?</div><div class='rsvp-radio-button-wrapper'><input type='radio' name='massAttending' value='true' checked>Yes</input><input type='radio' name='massAttending' value='false'>No</input></div>";
+		html+="<div>Will you be attending the gathering on 9/3/2018?</div><div class='rsvp-radio-button-wrapper'><input type='radio' name='gatheringAttending' value='true' checked>Yes</input><input type='radio' name='gatheringAttending' value='false'>No</input></div>";
 		html+="<input type='submit' value='Confirm' id='rsvp-response-confirm'/>";
 
 		$rsvpResponse.append(html);
+		$rsvpResponse.on('click','input[type="radio"][name="attending"]',function(){
+			//this.value=="true"?
+		});
 		$rsvpResponse.on('click','input[type="radio"][name="plusOneResponse"]',function(){
 			var $plusOneSection = $rsvpResponse.find('#plus-one-section');
 			this.value=="true"?$plusOneSection.show():$plusOneSection.hide();
 		});
+		function nextQuestion(element){
+			$(element).hide();
+		}
 		$rsvpResponse.find('#rsvp-response-confirm').on('click',function(){
 			var $rsvpMadlib = $('#rsvp-mad-lib-form');
 			$.ajax({

@@ -26,8 +26,8 @@
 					<div id='rsvp-text-content'>
 						<form id='rsvp-form'>
 							<p class='rsvp-title-text'>Enter Name To RSVP:</p>
-							<input type='text' name='firstName' id='firstName' placeholder="First Name" />
-							<input type='text' name='lastName' id='lastName' placeholder="Last Name" />
+							<input type='text' class='rsvp-input' name='firstName' id='firstName' placeholder="First Name" />
+							<input type='text' class='rsvp-input' name='lastName' id='lastName' placeholder="Last Name" />
 							<input id='rsvp-name' type='submit' value="Search">
 						</form>
 						<form id='rsvp-response-form'>
@@ -36,8 +36,8 @@
 							<input type="hidden" id='rsvp-mad-lib-groupid' />
 							<p>Thank you for your response!</p>
 							<p>Please help us fill out this mad lib for the wedding!</p>
-							<p>
-								We are so <input type='text' name='madLib1' placeholder="Adjective" /> to be invited to your wedding.  When we got the invitation we exclaimed  <input type='text' name='madLib2'/>!  We are so excited for  <input type='text' name='madLib3'/>. We hope the DJ plays  <input type='text' name='madLibSong' placeholder="Song" /> by  <input type='text' name='madLibArtist' placeholder="Artist" />.  You two are the most  <input type='text' name='madLib4' placeholder="Adjective" /> <input type='text' name='madLib5' placeholder="Noun" /> and we wish you  <input type='text' name='madLib6'/>. 
+							<p id='rsvp-mad-lib'>
+								We are so <input type='text' class='rsvp-mad-lib-input' name='madLib1' placeholder="Adjective" /> to be invited to your wedding.  When we got the invitation we exclaimed  <input type='text' class='rsvp-mad-lib-input' name='madLib2'/>!  We are so excited for  <input type='text' class='rsvp-mad-lib-input' name='madLib3'/>. We hope the DJ plays  <input type='text' class='rsvp-mad-lib-input' name='madLibSong' placeholder="Song" /> by  <input type='text' class='rsvp-mad-lib-input' name='madLibArtist' placeholder="Artist" />.  You two are the most  <input type='text' class='rsvp-mad-lib-input' name='madLib4' placeholder="Adjective" /> <input type='text' class='rsvp-mad-lib-input' name='madLib5' placeholder="Noun" /> and we wish you  <input type='text' class='rsvp-mad-lib-input' name='madLib6'/>. 
 							</p>
 							<input id='rsvp-mad-lib-submit' type='submit'>
 						</form>
@@ -267,7 +267,7 @@
 							</div>
 							<div class='event'>
 								<h4>Appetizers and Games</h4>
-								<h5>Saturday 09.03.18</h5>
+								<h5>Monday 09.03.18</h5>
 								<h5><a class='link' href='https://goo.gl/maps/YDyauXXv6VM2' target='_'>3000 Spout Run Parkway</a></h5>
 								<p>
 								 	If you're still in town and can't get enough of us, Hannah and Patrick will be hosting a casual gathering with light appetizers and drinks at the club room of Cardinal House Condominiums. There will be games, pool, and karaoke.
@@ -288,7 +288,7 @@
 					<div class='section-container' id='rsvp-text-container'>
 						<div>
 							<span class='section-title'>RSVP</span>
-							<div class='align-center'><button id='rsvp'>Click to RSVP!</button></div>
+							<span class='link' id='rsvp-button'>Click to RSVP!</span>
 						</div>
 					</div>
 					<img class='section-image' src='./styles/images/1024/rsvp.jpg' />

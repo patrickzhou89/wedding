@@ -92,16 +92,17 @@ p {
 .italic {
   font-weight: italic; }
 
-button {
+button, input[type="submit"] {
   margin: 20px 0;
-  padding: 15px 25px;
+  padding: 10px 20px;
   border: 0;
-  font-size: 20px;
-  background: linear-gradient(to bottom, #949494, #757575);
+  font-size: 18px;
+  font-family: aleo;
+  background: linear-gradient(to bottom, #BDBDBD, #757575);
   color: #fff;
   border: 1px solid #9e9e9e;
-  border-radius: 8px; }
-  button:hover {
+  border-radius: 5px; }
+  button:hover, input[type="submit"]:hover {
     background: linear-gradient(to bottom, rgba(148, 148, 148, 0.8), rgba(117, 117, 117, 0.8));
     cursor: pointer; }
 
@@ -420,18 +421,27 @@ body {
   margin: 15px 0; }
 
 #rsvp-text-content {
-  font-size: 22px;
+  font-size: 18px;
   display: flex;
-  text-align: left; }
+  text-align: center; }
   #rsvp-text-content > form > * {
     margin: 8px 0; }
-  #rsvp-text-content input[type="text"] {
+  #rsvp-text-content .rsvp-input {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 10px 5px;
     border: 2px solid #c2c4c9;
     background-color: #fff;
     color: black; }
+    #rsvp-text-content .rsvp-input:focus {
+      outline: none;
+      box-shadow: 0px 0px 2px #7282a7;
+      border-radius: 5px; }
+    #rsvp-text-content .rsvp-input::placeholder {
+      font-family: aleo;
+      font-size: 16px; }
+  #rsvp-text-content .rsvp-radio-button-wrapper {
+    font-size: 12px; }
 
 #rsvp-response-form, #rsvp-mad-lib-form {
   display: none; }
@@ -442,6 +452,19 @@ body {
 
 .rsvp-guest-list-names {
   margin: 10px 0; }
+
+#rsvp-mad-lib {
+  text-align: justify;
+  font-size: 14px; }
+  #rsvp-mad-lib .rsvp-mad-lib-input {
+    border: 0;
+    border-bottom: 1px solid black;
+    text-align: center; }
+    #rsvp-mad-lib .rsvp-mad-lib-input:focus {
+      outline: none; }
+    #rsvp-mad-lib .rsvp-mad-lib-input::placeholder {
+      font-family: aleo;
+      font-size: 14px; }
 
 #engagement-text-container {
   width: 600px;
