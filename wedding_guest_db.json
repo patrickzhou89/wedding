@@ -488,7 +488,8 @@ db.guestList.insert([
 				'firstName':'Kathy',
 				'lastName':'Bond'
 			}
-		]
+		],
+		plusOne:true
 	},
 	{
 		guestList:[
@@ -496,7 +497,8 @@ db.guestList.insert([
 				'firstName':'Irene',
 				'lastName':'Criss'
 			}
-		]
+		],
+		plusOne:true
 	},
 	{
 		guestList:[
@@ -504,7 +506,8 @@ db.guestList.insert([
 				'firstName':'Robin',
 				'lastName':'Campbell'
 			}
-		]
+		],
+		plusOne:true
 	},
 	{
 		guestList:[
@@ -512,7 +515,8 @@ db.guestList.insert([
 				'firstName':'Rhonda',
 				'lastName':'Paragna'
 			}
-		]
+		],
+		plusOne:true
 	},
 	{
 		guestList:[
@@ -520,7 +524,8 @@ db.guestList.insert([
 				'firstName':'Candy',
 				'lastName':'Strider'
 			}
-		]
+		],
+		plusOne:true
 	},
 	{
 		guestList:[
@@ -528,7 +533,8 @@ db.guestList.insert([
 				'firstName':'Zeny',
 				'lastName':'Azares'
 			}
-		]
+		],
+		plusOne:true
 	},
 	{
 		guestList:[
@@ -624,7 +630,8 @@ db.guestList.insert([
 				'firstName':'Ericka',
 				'lastName':'Escolero'
 			}
-		]
+		],
+		plusOne:true
 	},
 	{
 		guestList:[
@@ -632,7 +639,8 @@ db.guestList.insert([
 				'firstName':'Joanne',
 				'lastName':'Bonoan'
 			}
-		]
+		],
+		plusOne:true
 	},
 	{
 		guestList:[
