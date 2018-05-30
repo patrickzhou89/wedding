@@ -46,6 +46,17 @@
 										<span><input type='radio' name='attending' value='false' required/>Sorry, we respectfully decline</span>
 									</div>
 								</div>
+								<div id='rsvp-response-diet'>
+									<p>Any Dietary Restrictions?</p>
+									<p class='rsvp-error' id='rsvp-validation-diet'>Please specify your other dietary restriction</p>
+									<div class='rsvp-radio-button-wrapper'>
+										<span><input type='radio' name='dietary' value='none' checked/>None</span>
+										<span><input type='radio' name='dietary' value='vegetarian' />Vegetarian</span>
+										<span><input type='radio' name='dietary' value='vegan' />Vegan</span>
+										<span><input type='radio' name='dietary' value='other' />Other</span>
+									</div>
+									<div><input type='text' class='rsvp-input' name='dietOther' id='rsvp-diet-other-textfield' placeholder='Please Specify'/></div>
+								</div>
 								<div>
 									<p>Will you be attending mass on 9/1/2018?</p>
 									<div class='rsvp-radio-button-wrapper'>
@@ -60,6 +71,7 @@
 										<span><input type='radio' name='gatheringAttending' value='false'/>No</span>
 									</div>
 								</div>
+								
 							</div>
 							<input type='submit' value='Confirm' id='rsvp-response-confirm'/>
 						</form>
@@ -68,7 +80,7 @@
 							<p>Thank your for your response! </p>
 							<p>Please help us fill out this mad lib for the wedding!</p>
 							<p id='rsvp-mad-lib'>
-								We are so <input type='text' class='rsvp-mad-lib-input' name='madLib1' placeholder="Adjective" required/> to be invited to your wedding.  When we got the invitation we exclaimed  <input type='text' class='rsvp-mad-lib-input' name='madLib2' required/>!  We are so excited for  <input type='text' class='rsvp-mad-lib-input' name='madLib3' required/>. We hope the DJ plays  <input type='text' class='rsvp-mad-lib-input' name='madLibSong' placeholder="Song" required/> by  <input type='text' class='rsvp-mad-lib-input' name='madLibArtist' placeholder="Artist" required/>.  You two are the most  <input type='text' class='rsvp-mad-lib-input' name='madLib4' placeholder="Adjective" required/> <input type='text' class='rsvp-mad-lib-input' name='madLib5' placeholder="Noun" required/> and we wish you  <input type='text' class='rsvp-mad-lib-input' name='madLib6' required/>. 
+								I am/We are so <input type='text' class='rsvp-mad-lib-input' name='madLib1' placeholder="Adjective" required/> to be invited to your wedding.  When I/we got the invitation I/we exclaimed  <input type='text' class='rsvp-mad-lib-input' name='madLib2' required/>!  I am/We are so excited for  <input type='text' class='rsvp-mad-lib-input' name='madLib3' required/>. I/We hope the DJ plays  <input type='text' class='rsvp-mad-lib-input' name='madLibSong' placeholder="Song" required/> by  <input type='text' class='rsvp-mad-lib-input' name='madLibArtist' placeholder="Artist" required/>.  You two are the most  <input type='text' class='rsvp-mad-lib-input' name='madLib4' placeholder="Adjective" required/> <input type='text' class='rsvp-mad-lib-input' name='madLib5' placeholder="Noun" required/> and I/we wish you  <input type='text' class='rsvp-mad-lib-input' name='madLib6' required/>. 
 							</p>
 							<input id='rsvp-mad-lib-submit' type='submit' value='Submit'>
 						</form>

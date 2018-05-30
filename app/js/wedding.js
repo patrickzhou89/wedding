@@ -200,7 +200,7 @@
 			$('#guest-party-id').val(data.guestPartyId)
 		}
 		if(data.plusOne){
-			var plusOneSection="<div><p>Will you be bringing a +1?</p><p class='rsvp-error' id='rsvp-validation'>Please fill out +1 name.</p><div class='rsvp-radio-button-wrapper'><span><input type='radio' name='plusOneResponse' value='true' required checked/>Yes</span><span><input type='radio' name='plusOneResponse' value='false'/>No</span></div><div id='plus-one-section'><input type='text' class='rsvp-input' id='plus-one-name' name='plusOneName' placeholder='Name'></div></div>";
+			var plusOneSection="<div><p>Will you be bringing a +1?</p><p class='rsvp-error' id='rsvp-validation-plusone'>Please fill out +1 name.</p><div class='rsvp-radio-button-wrapper'><span><input type='radio' name='plusOneResponse' value='true' required checked/>Yes</span><span><input type='radio' name='plusOneResponse' value='false'/>No</span></div><div id='plus-one-section'><input type='text' class='rsvp-input' id='plus-one-name' name='plusOneName' placeholder='Name'></div></div>";
 			$('#rsvp-response-form-questions').last().append(plusOneSection);
 		}
 		$rsvpResponse.on('click','input[type="radio"][name="plusOneResponse"]',function(){
@@ -212,11 +212,31 @@
 				$rsvpResponse.find('#plus-one-name').val('');
 			}
 		});
+		var $rsvpResponseDiet = $('#rsvp-response-diet');
+		var $dietOther = $('#rsvp-diet-other-textfield');
+		$rsvpResponse.on('click','input[type="radio"][name="attending"]',function(){
+			if(this.value=="true"){
+				$rsvpResponseDiet.show();
+			}else{
+				$dietOther.val('');
+				$rsvpResponseDiet.hide(); 
+			}
+		});
+		
+		$rsvpResponse.on('click','input[type="radio"][name="dietary"]',function(){
+			if(this.value=="other"){
+				$dietOther.show();
+			}else{
+				$dietOther.val('').hide(); 
+			}
+		});
 		$rsvpResponse.on('submit',function(e){
 			$rsvpResponse.find('.rsvp-error').hide();
 			data = $rsvpResponse.serializeFormJSON();
 			if(data.plusOneResponse=='true' && !data.plusOneName){
-				$rsvpResponse.find('#rsvp-validation').show();
+				$rsvpResponse.find('#rsvp-validation-plusone').show();
+			}else if(data.attending=='true' && data.dietary=='other' && !data.dietOther){
+				$rsvpResponse.find('#rsvp-validation-diet').show();
 			}else{
 				$.ajax({
 					method: "POST",

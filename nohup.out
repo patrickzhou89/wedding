@@ -1,0 +1,16 @@
+
+> wedding@1.0.0 start /home/patrick/Website/wedding_dev
+> node server.js production
+
+production
+wedding dist
+Listening on port 3003
+Successfully connected to DB
+
+> wedding@1.0.0 start /home/patrick/Website/wedding_dev
+> node server.js production
+
+production
+wedding dist
+Listening on port 3003
+Successfully connected to DB

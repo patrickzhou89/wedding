@@ -74,19 +74,15 @@ p {
 @font-face {
   font-family: mademoisellecamille;
   src: url("../fonts/Mademoiselle Camille L.ttf"); }
-
 @font-face {
   font-family: sverigedecorated;
   src: url("../fonts/SverigeScriptDecorated_Demo.ttf"); }
-
 @font-face {
   font-family: greatvibes;
   src: url("../fonts/greatvibes.woff"); }
-
 @font-face {
   font-family: aleo;
   src: url("../fonts/aleo.woff"); }
-
 .align-center {
   text-align: center; }
 
@@ -461,6 +457,9 @@ body {
 #rsvp-response-form, #rsvp-mad-lib-form {
   display: none; }
 
+#rsvp-diet-other-textfield {
+  display: none; }
+
 #rsvp-thank-you-wrapper {
   display: none;
   width: 100%; }
@@ -800,3 +799,5 @@ footer {
   footer a {
     display: block;
     color: #666; }
+
+/*# sourceMappingURL=wedding.css.map */
