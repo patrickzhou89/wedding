@@ -34,12 +34,15 @@ h3{
     font-family: mademoisellecamille;
 }
 h4{
-   font-size: 22px;
+    font-size: 20px;
     margin: 8px;
     color: #212121;
     text-transform: uppercase;
     font-style: normal;
     text-align:center;
+      @media screen and (max-width:$tablet_horizontal){
+        font-size:18px;
+    }
 }
 h5{
     font-size: 16px;
@@ -316,7 +319,7 @@ body{
 }
 #page-wrapper{
 	width:80%;
-    min-width:1536px;
+    min-width:$standard_res;
 	margin: 0 auto;
 	box-shadow: 0 0 10px 2px #757575;
     @media screen and (max-width:$standard_res){
@@ -401,6 +404,12 @@ body{
         background-color: rgba(158, 158, 158, 1);
         }
     }
+    @media screen and (min-width:$tablet_horizontal) and (max-width:$standard_res){
+        top:15%;
+        width:38%;
+        right:6%;
+    }
+  
     @media screen and (max-width:$tablet_horizontal){
         top:20px;
         right:2%;
@@ -432,7 +441,7 @@ body{
     margin: auto;
     position: absolute;
     min-height: 600px;
-    width: 34%;
+    width: 40%;
     min-width: 500px;
     text-align: center;
     left: 0;
@@ -441,6 +450,15 @@ body{
     top: 10%;
     height: 80%;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    @media screen and (min-width:$tablet_horizontal) and (max-width:$standard_res){
+        width: 60%;
+    }
+    @media screen and (min-width:$tablet) and (max-width:$tablet_horizontal){
+        width:85%;
+    }
+    @media screen and (max-width:$tablet){
+        width:100%;
+    }
 }
 #rsvp-content{
     margin:13px;
