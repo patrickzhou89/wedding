@@ -18,7 +18,7 @@ if(process.argv){
 	    port=3003;
 	}
 }
-	console.log(db, hostFolder);
+console.log('using database'+db+' and folder:' +hostFolder);
 mongoose.connect('mongodb://localhost/'+db,function (err) {
    if (err) throw err;
    console.log('Successfully connected to DB');
@@ -43,7 +43,9 @@ var guestResponse = new Schema({
 	gatheringAttending: Boolean,
 	plusOneResponse: Boolean,
 	plusOneName: String,
-	timestamp: Date
+	timestamp: Date,
+	song:String,
+	artist:String
 })
 var guestResponseModel=mongoose.model('guestResponse', guestResponse,'guestResponse');
 
@@ -54,9 +56,7 @@ var guestMadLibResponse = new Schema({
 	madLib3: String,
 	madLib4: String,
 	madLib5: String,
-	madLib6: String,
-	madLibArtist: String,
-	madLibSong: String
+	madLib6: String
 })
 var guestMadLibResponseModel=mongoose.model('guestMadLibResponse', guestMadLibResponse,'guestMadLibResponse');
 

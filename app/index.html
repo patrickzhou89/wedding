@@ -28,11 +28,11 @@
 							<p class='rsvp-title-text'>Enter Name To RSVP:</p>
 							<p class='rsvp-error' id='rsvp-not-found'>Sorry, we couldn't find your reservation.</p>
 							<p class='rsvp-error' id='rsvp-bad-request'>Sorry, something went wrong. Please try again.</p>
-							<input type='text' class='rsvp-input' name='firstName' id='firstName' placeholder="First Name" required/>
-							<input type='text' class='rsvp-input' name='lastName' id='lastName' placeholder="Last Name" required/>
+							<input type='text' class='rsvp-input rsvp-full-input' name='firstName' id='firstName' placeholder="First Name" required/>
+							<input type='text' class='rsvp-input rsvp-full-input' name='lastName' id='lastName' placeholder="Last Name" required/>
 							<input id='rsvp-name' type='submit' value="Search">
 						</form>
-						<form id='rsvp-response-form'>
+						<form id='rsvp-response-form' class='hidden'>
 							<p class="align-center">Your reservation was found!</p>
 							<p class='rsvp-error' id='rsvp-bad-request'>Sorry, something went wrong. Please try again.</p>
 							<input type="hidden" name="guestPartyId" id='guest-party-id' />
@@ -55,7 +55,12 @@
 										<span><input type='radio' name='dietary' value='vegan' />Vegan</span>
 										<span><input type='radio' name='dietary' value='other' />Other</span>
 									</div>
-									<div><input type='text' class='rsvp-input' name='dietOther' id='rsvp-diet-other-textfield' placeholder='Please Specify'/></div>
+									<div><input type='text' class='rsvp-input rsvp-full-input hidden'  name='dietOther' id='rsvp-diet-other-textfield' placeholder='Please Specify'/></div>
+								</div>
+								<div id='rsvp-song''>
+									<p>Song Requests for DJ? (optional)</p>
+									<input type='text' class='rsvp-input rsvp-half-input' name='song' placeholder='Song'/>
+									<input type='text' class='rsvp-input rsvp-half-input' name='artist' placeholder='Artist'/>
 								</div>
 								<div>
 									<p>Will you be attending mass on 9/1/2018?</p>
@@ -75,16 +80,16 @@
 							</div>
 							<input type='submit' value='Confirm' id='rsvp-response-confirm'/>
 						</form>
-						<form id='rsvp-mad-lib-form'>
+						<form id='rsvp-mad-lib-form' class='hidden'>
 							<input type="hidden" id='rsvp-mad-lib-groupid' name='guestPartyId' />
 							<p>Thank your for your response! </p>
 							<p>Please help us fill out this mad lib for the wedding!</p>
 							<p id='rsvp-mad-lib'>
-								I am/We are so <input type='text' class='rsvp-mad-lib-input' name='madLib1' placeholder="Adjective" required/> to be invited to your wedding.  When I/we got the invitation I/we exclaimed  <input type='text' class='rsvp-mad-lib-input' name='madLib2' required/>!  I am/We are so excited for  <input type='text' class='rsvp-mad-lib-input' name='madLib3' required/>. I/We hope the DJ plays  <input type='text' class='rsvp-mad-lib-input' name='madLibSong' placeholder="Song" required/> by  <input type='text' class='rsvp-mad-lib-input' name='madLibArtist' placeholder="Artist" required/>.  You two are the most  <input type='text' class='rsvp-mad-lib-input' name='madLib4' placeholder="Adjective" required/> <input type='text' class='rsvp-mad-lib-input' name='madLib5' placeholder="Noun" required/> and I/we wish you  <input type='text' class='rsvp-mad-lib-input' name='madLib6' required/>. 
+								I am/We are so <input type='text' class='rsvp-mad-lib-input' name='madLib1' placeholder="Adjective" required/> to be invited to your wedding.  When I/we got the invitation I/we exclaimed  <input type='text' class='rsvp-mad-lib-input' name='madLib2' required/>!  I am/We are so excited for  <input type='text' class='rsvp-mad-lib-input' name='madLib3' required/>. You two are the most  <input type='text' class='rsvp-mad-lib-input' name='madLib4' placeholder="Adjective" required/> <input type='text' class='rsvp-mad-lib-input' name='madLib5' placeholder="Noun" required/> and I/we wish you  <input type='text' class='rsvp-mad-lib-input' name='madLib6' required/>. 
 							</p>
 							<input id='rsvp-mad-lib-submit' type='submit' value='Submit'>
 						</form>
-						<div id='rsvp-thank-you-wrapper'>
+						<div id='rsvp-thank-you-wrapper' class='hidden'>
 							<p id='rsvp-thank-you'></p>
 						</div>
 					</div>

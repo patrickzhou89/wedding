@@ -93,6 +93,10 @@ ul, li {
   text-transform: none;
 }
 
+.hidden {
+  display: none;
+}
+
 p {
   margin: 5px 0;
   line-height: 1.3;
@@ -572,7 +576,6 @@ body.noscroll {
   margin: 10px 0;
 }
 #rsvp-text-content .rsvp-input {
-  width: 100%;
   border-radius: 5px;
   padding: 10px 5px;
   border: 2px solid #c2c4c9;
@@ -588,6 +591,12 @@ body.noscroll {
   font-family: aleo;
   font-size: 16px;
 }
+#rsvp-text-content .rsvp-full-input {
+  width: 100%;
+}
+#rsvp-text-content .rsvp-half-input {
+  width: 45%;
+}
 #rsvp-text-content .rsvp-radio-button-wrapper {
   font-size: 14px;
   display: flex;
@@ -597,16 +606,7 @@ body.noscroll {
   margin: 5px 0;
 }
 
-#rsvp-response-form, #rsvp-mad-lib-form {
-  display: none;
-}
-
-#rsvp-diet-other-textfield {
-  display: none;
-}
-
 #rsvp-thank-you-wrapper {
-  display: none;
   width: 100%;
 }
 

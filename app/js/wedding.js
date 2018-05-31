@@ -213,13 +213,16 @@
 			}
 		});
 		var $rsvpResponseDiet = $('#rsvp-response-diet');
+		var $rsvpSong = $('#rsvp-song');
 		var $dietOther = $('#rsvp-diet-other-textfield');
 		$rsvpResponse.on('click','input[type="radio"][name="attending"]',function(){
 			if(this.value=="true"){
 				$rsvpResponseDiet.show();
+				$rsvpSong.show();
 			}else{
 				$dietOther.val('');
 				$rsvpResponseDiet.hide(); 
+				$rsvpSong.hide();
 			}
 		});
 		
