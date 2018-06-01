@@ -834,13 +834,31 @@ body{
 #accomodations{
     background-color: rgba(245, 245, 245, 0.7);
     min-height:600px;
-    padding:60px 0;
 }
 #accomodations-text-container{
+    color:#fff;
     width: 50%;
     margin: 0 auto;
     left: 0;
     right: 0;
+    top: 20px;
+    z-index: 2;
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom,#9E9E9E,#BDBDBD);
+    border-image-slice: 1;
+    box-shadow: 0 2px 10px rgba(0,0,0,.5);
+    background-color: rgba(158, 158, 158, .8);
+    transition: background-color 1s;
+    @media screen and (min-width:1025px){
+      &:hover{
+        background-color: rgba(158, 158, 158, 1);
+        }
+    }
+    h4{
+        color:#fff;
+    }
+    text-align:center;
 }
 #other-events-container{
     margin:0px auto;
