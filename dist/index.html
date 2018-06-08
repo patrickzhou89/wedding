@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="styles/css/wedding.min.css?t=1527634259319">
+		<link rel="stylesheet" href="styles/css/wedding.min.css?t=1528419544013">
 		<link rel="icon" href="images/favicon.png" type="image/png">
  		<title>Hannah Tajo and Patrick's Wedding</title>
 	</head>
@@ -25,11 +25,11 @@
 							<p class='rsvp-title-text'>Enter Name To RSVP:</p>
 							<p class='rsvp-error' id='rsvp-not-found'>Sorry, we couldn't find your reservation.</p>
 							<p class='rsvp-error' id='rsvp-bad-request'>Sorry, something went wrong. Please try again.</p>
-							<input type='text' class='rsvp-input' name='firstName' id='firstName' placeholder="First Name" required/>
-							<input type='text' class='rsvp-input' name='lastName' id='lastName' placeholder="Last Name" required/>
+							<input type='text' class='rsvp-input rsvp-full-input' name='firstName' id='firstName' placeholder="First Name" required/>
+							<input type='text' class='rsvp-input rsvp-full-input' name='lastName' id='lastName' placeholder="Last Name" required/>
 							<input id='rsvp-name' type='submit' value="Search">
 						</form>
-						<form id='rsvp-response-form'>
+						<form id='rsvp-response-form' class='hidden'>
 							<p class="align-center">Your reservation was found!</p>
 							<p class='rsvp-error' id='rsvp-bad-request'>Sorry, something went wrong. Please try again.</p>
 							<input type="hidden" name="guestPartyId" id='guest-party-id' />
@@ -42,6 +42,22 @@
 										<span><input type='radio' name='attending' value='true' checked/>Yes! I/We will be attending</span>
 										<span><input type='radio' name='attending' value='false' required/>Sorry, we respectfully decline</span>
 									</div>
+								</div>
+								<div id='rsvp-response-diet'>
+									<p>Any Dietary Restrictions?</p>
+									<p class='rsvp-error' id='rsvp-validation-diet'>Please specify your other dietary restriction</p>
+									<div class='rsvp-radio-button-wrapper'>
+										<span><input type='radio' name='dietary' value='none' checked/>None</span>
+										<span><input type='radio' name='dietary' value='vegetarian' />Vegetarian</span>
+										<span><input type='radio' name='dietary' value='vegan' />Vegan</span>
+										<span><input type='radio' name='dietary' value='other' />Other</span>
+									</div>
+									<div><input type='text' class='rsvp-input rsvp-full-input hidden'  name='dietOther' id='rsvp-diet-other-textfield' placeholder='Please Specify'/></div>
+								</div>
+								<div id='rsvp-song''>
+									<p>Song Requests for DJ? (optional)</p>
+									<input type='text' class='rsvp-input rsvp-half-input' name='song' placeholder='Song'/>
+									<input type='text' class='rsvp-input rsvp-half-input' name='artist' placeholder='Artist'/>
 								</div>
 								<div>
 									<p>Will you be attending mass on 9/1/2018?</p>
@@ -57,19 +73,20 @@
 										<span><input type='radio' name='gatheringAttending' value='false'/>No</span>
 									</div>
 								</div>
+								
 							</div>
 							<input type='submit' value='Confirm' id='rsvp-response-confirm'/>
 						</form>
-						<form id='rsvp-mad-lib-form'>
+						<form id='rsvp-mad-lib-form' class='hidden'>
 							<input type="hidden" id='rsvp-mad-lib-groupid' name='guestPartyId' />
 							<p>Thank your for your response! </p>
 							<p>Please help us fill out this mad lib for the wedding!</p>
 							<p id='rsvp-mad-lib'>
-								We are so <input type='text' class='rsvp-mad-lib-input' name='madLib1' placeholder="Adjective" required/> to be invited to your wedding.  When we got the invitation we exclaimed  <input type='text' class='rsvp-mad-lib-input' name='madLib2' required/>!  We are so excited for  <input type='text' class='rsvp-mad-lib-input' name='madLib3' required/>. We hope the DJ plays  <input type='text' class='rsvp-mad-lib-input' name='madLibSong' placeholder="Song" required/> by  <input type='text' class='rsvp-mad-lib-input' name='madLibArtist' placeholder="Artist" required/>.  You two are the most  <input type='text' class='rsvp-mad-lib-input' name='madLib4' placeholder="Adjective" required/> <input type='text' class='rsvp-mad-lib-input' name='madLib5' placeholder="Noun" required/> and we wish you  <input type='text' class='rsvp-mad-lib-input' name='madLib6' required/>. 
+								I am/We are so <input type='text' class='rsvp-mad-lib-input' name='madLib1' placeholder="Adjective" required/> to be invited to your wedding.  When I/we got the invitation I/we exclaimed  <input type='text' class='rsvp-mad-lib-input' name='madLib2' required/>!  I am/We are so excited for  <input type='text' class='rsvp-mad-lib-input' name='madLib3' required/>. You two are the most  <input type='text' class='rsvp-mad-lib-input' name='madLib4' placeholder="Adjective" required/> <input type='text' class='rsvp-mad-lib-input' name='madLib5' placeholder="Noun" required/> and I/we wish you  <input type='text' class='rsvp-mad-lib-input' name='madLib6' required/>. 
 							</p>
 							<input id='rsvp-mad-lib-submit' type='submit' value='Submit'>
 						</form>
-						<div id='rsvp-thank-you-wrapper'>
+						<div id='rsvp-thank-you-wrapper' class='hidden'>
 							<p id='rsvp-thank-you'></p>
 						</div>
 					</div>
@@ -88,8 +105,6 @@
 						<li><a href='#story'>Our Story</a></li>
 						<li><a href='#engagement'>Engagement</a></li>
 						<li><a href='#wedding'>Wedding</a></li>
-						<!--
-						<li><a href='#accomodations'>Accomodations</a></li> -->
 						<li><a href='#other-events'>Other Events</a></li>
 						<li><a href='#rsvp'>RSVP</a></li>
 						<li><a href='#gallery'>Gallery</a></li>
@@ -152,6 +167,22 @@
 						</div>
 					</div>
 				</div>
+				<div class='section' id='accomodations'>
+					<img class='section-image' src='./styles/images/1024/accomodations.png' />
+					<div class='section-container' id='accomodations-text-container'>
+						<div>
+						<span class='section-title'>Accomodations</span>
+						</div>	
+						<div>
+							<h4 class='link'><a href="https://www.wyndhamhotels.com/days-inn/lanham-maryland/days-inn-lanham-washington-dc/overview" target="_">Days Inn Lanham Washington D.C</a></h4>
+							<h5>9023 Annapolis Road</br>
+								Lanham Maryland</br>
+								United States</br>
+							</h5>
+							<p>Rooms reserved under TajoZhou for Sunday, September 2<span class='superscript'>nd</span>, 2018 for $82 (tax included)</p>
+						</div>
+					</div>
+				</div>
 				<div class='section' id='other-events'>
 					<div class='section-container' id='other-events-container'>
 						<div>
@@ -165,6 +196,7 @@
 								<h5>
 									310 S Royal St, Alexandria, VA 22314
 								</h5>
+								<h5 class='italic'>Semi-Formal Attire</h5>
 								</br>
 								<p>
 									Join us for Catholic mass at 5 PM with a blessing from one of Hannah's oldest friends Reverend Andrew Haissig after church. Afterwards, we will be taking formal pictures.<br/>
@@ -333,6 +365,6 @@
 			<a href="https://www.freepik.com/free-photo/pink-rose-and-petals-over-light-pink-background-with-space-in-the-middle_1371177.htm">Images courtesy of Freepik</a>
 		</footer>
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-		<script src="js/wedding.min.js?t=1527634259319"></script>
+		<script src="js/wedding.min.js?t=1528419544013"></script>
 	</body>
 </html>

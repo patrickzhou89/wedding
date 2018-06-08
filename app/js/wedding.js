@@ -200,7 +200,7 @@
 			$('#guest-party-id').val(data.guestPartyId)
 		}
 		if(data.plusOne){
-			var plusOneSection="<div><p>Will you be bringing a +1?</p><p class='rsvp-error' id='rsvp-validation-plusone'>Please fill out +1 name.</p><div class='rsvp-radio-button-wrapper'><span><input type='radio' name='plusOneResponse' value='true' required checked/>Yes</span><span><input type='radio' name='plusOneResponse' value='false'/>No</span></div><div id='plus-one-section'><input type='text' class='rsvp-input' id='plus-one-name' name='plusOneName' placeholder='Name'></div></div>";
+			var plusOneSection="<div><p>Will you be bringing a +1?</p><p class='rsvp-error' id='rsvp-validation-plusone'>Please fill out +1 name.</p><div class='rsvp-radio-button-wrapper'><span><input type='radio' name='plusOneResponse' value='true' required checked/>Yes</span><span><input type='radio' name='plusOneResponse' value='false'/>No</span></div><div id='plus-one-section'><input type='text' class='rsvp-input rsvp-full-input' id='plus-one-name' name='plusOneName' placeholder='Name'></div></div>";
 			$('#rsvp-response-form-questions').last().append(plusOneSection);
 		}
 		$rsvpResponse.on('click','input[type="radio"][name="plusOneResponse"]',function(){
