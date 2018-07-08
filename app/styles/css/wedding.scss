@@ -461,6 +461,7 @@ body{
     }
     @media screen and (max-width:$tablet){
         width:100%;
+        min-width:0;
     }
 }
 #rsvp-content{
